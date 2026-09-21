@@ -66,7 +66,47 @@ threshold on this dataset. A "act if conf > 0.6" rule would have fired on seven
 cases and been wrong every time. This is the single most important finding in
 this file and it argues against trusting a single confidence number as a gate.
 
-## Hierarchical arm on DDXPlus: 7/12 escalated
+## Hierarchical arm on DDXPlus, after populating the grid
+
+The grid was rebuilt to cover all 49 DDXPlus pathologies (`grids.py`,
+checked by `validate_grids.py`: 49/49 exact string match, no extras, no
+invalid syndrome or mechanism, no empty cell, no oversized cell).
+
+Same 40 cases (offset 30), before and after the repair:
+
+    arm                       top-1        escalated   precision when answered
+    hier, gaps present        17/40  42%      11             59%
+    hier, grid repaired       22/40  55%       8             69%
+    flat255                   22/40  55%       0             55%
+
+**On the 32 cases the repaired hierarchy chose to answer, it beat the flat
+list 69% to 59% on the same cases.** Overall top-1 is a tie at 55% because
+the hierarchy declines 8 cases the flat arm always answers - and on those 8
+the flat arm was right only 3/8 (38%), so the escalations are concentrated on
+genuinely hard cases rather than easy ones.
+
+That is the real trade: the hierarchy is more accurate when it commits, and
+converts most of its would-be errors into refusals instead of wrong labels.
+
+### Two grid bugs the data exposed
+
+1. **`Localized edema` unreachable from `cardiovascular`.** Leg swelling
+   routes to cardiovascular/vascular, but the condition was only authored
+   under skin and allergic cells, so the router reached the right cell and
+   found nothing. Fixed by adding the entry points a clinician would use.
+2. **Fragile single-entry pathologies.** 17 of 49 conditions were reachable
+   from exactly one syndrome, so a single L2 misroute lost them permanently.
+   Reduced to 12, and `validate_grids.py` now warns on every remaining one.
+
+### A "false" red flag that was correct medicine
+
+One GERD case escalated on `active_bleeding`. Inspecting it: the patient
+reported **black tarry stools**. That is melena - upper gastrointestinal
+bleeding - which needs endoscopy regardless of the reflux label. DDXPlus
+records the pathology as GERD; the router was not wrong, the dataset label is
+simply not a triage decision. Scoring this as a miss understates the router.
+
+## Original run, before the grid was populated: 7/12 escalated
 
 Expected, and it is the coverage-gap failure mode predicted in HIERARCHY.md
 appearing on real data. The grid in `hierarchical_router.py` was authored for

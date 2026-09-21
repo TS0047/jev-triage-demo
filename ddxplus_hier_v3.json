@@ -1,0 +1,824 @@
+{
+  "dataset": "aai530-group6/ddxplus",
+  "n": 40,
+  "results": [
+    {
+      "i": 1,
+      "truth": "Pneumonia",
+      "ddx_top5": [
+        "Bronchitis",
+        "Pneumonia",
+        "Tuberculosis",
+        "Bronchiectasis",
+        "Pulmonary neoplasm"
+      ],
+      "state_chars": 1839,
+      "hier": {
+        "pred": "Bronchitis",
+        "label": "Bronchitis - infection of the larger airways, productive cough, no consolidation",
+        "conf": 0.35,
+        "path": "acute_respiratory > infective > Bronchitis",
+        "top5": [],
+        "cost": 0.0006246800000000001,
+        "calls": 6
+      }
+    },
+    {
+      "i": 2,
+      "truth": "Spontaneous rib fracture",
+      "ddx_top5": [
+        "Spontaneous pneumothorax",
+        "Pulmonary embolism",
+        "Bronchitis",
+        "Spontaneous rib fracture",
+        "Possible NSTEMI / STEMI"
+      ],
+      "state_chars": 1107,
+      "hier": {
+        "pred": "Spontaneous rib fracture",
+        "label": "Spontaneous rib fracture - localised chest wall pain and tenderness",
+        "conf": 0.26,
+        "path": "chest_pain > structural_surgical > Spontaneous rib fracture",
+        "top5": [],
+        "cost": 0.00050592,
+        "calls": 6
+      }
+    },
+    {
+      "i": 3,
+      "truth": "Anemia",
+      "ddx_top5": [
+        "Anemia",
+        "Atrial fibrillation",
+        "Guillain-Barr\u00e9 syndrome",
+        "Myocarditis",
+        "HIV (initial infection)"
+      ],
+      "state_chars": 1350,
+      "hier": {
+        "pred": "ESCALATED:red_flags",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00011464000000000001,
+        "calls": 1,
+        "escalated": true
+      }
+    },
+    {
+      "i": 4,
+      "truth": "URTI",
+      "ddx_top5": [
+        "URTI",
+        "Cluster headache",
+        "Chagas",
+        "Anemia"
+      ],
+      "state_chars": 957,
+      "hier": {
+        "pred": "Acute rhinosinusitis",
+        "label": "Acute rhinosinusitis - facial pain and blocked nose, under 12 weeks",
+        "conf": 0.82,
+        "path": "ent_upper_airway > infective > Acute rhinosinusitis",
+        "top5": [],
+        "cost": 0.00050164,
+        "calls": 6
+      }
+    },
+    {
+      "i": 5,
+      "truth": "GERD",
+      "ddx_top5": [
+        "GERD",
+        "Anaphylaxis"
+      ],
+      "state_chars": 1179,
+      "hier": {
+        "pred": "GERD",
+        "label": "Gastro-oesophageal reflux - heartburn and acid regurgitation",
+        "conf": 0.98,
+        "path": "acute_abdominal > degenerative_functional > GERD",
+        "top5": [],
+        "cost": 0.00047192,
+        "calls": 6
+      }
+    },
+    {
+      "i": 6,
+      "truth": "Influenza",
+      "ddx_top5": [
+        "Influenza",
+        "HIV (initial infection)",
+        "Bronchitis",
+        "Pneumonia",
+        "Tuberculosis"
+      ],
+      "state_chars": 1307,
+      "hier": {
+        "pred": "Influenza",
+        "label": "Influenza",
+        "conf": 0.96,
+        "path": "acute_febrile_undifferentiated > infective > Influenza",
+        "top5": [],
+        "cost": 0.0005068,
+        "calls": 6
+      }
+    },
+    {
+      "i": 7,
+      "truth": "Viral pharyngitis",
+      "ddx_top5": [
+        "Bronchitis",
+        "Acute laryngitis",
+        "Tuberculosis",
+        "Viral pharyngitis",
+        "Possible NSTEMI / STEMI"
+      ],
+      "state_chars": 838,
+      "hier": {
+        "pred": "Viral pharyngitis",
+        "label": "Viral pharyngitis - sore throat",
+        "conf": 0.9,
+        "path": "ent_upper_airway > infective > Viral pharyngitis",
+        "top5": [],
+        "cost": 0.00049412,
+        "calls": 6
+      }
+    },
+    {
+      "i": 8,
+      "truth": "Viral pharyngitis",
+      "ddx_top5": [
+        "Viral pharyngitis",
+        "Possible NSTEMI / STEMI",
+        "Acute laryngitis",
+        "Unstable angina",
+        "Stable angina"
+      ],
+      "state_chars": 880,
+      "hier": {
+        "pred": "URTI",
+        "label": "Upper respiratory tract infection (common cold)",
+        "conf": 0.87,
+        "path": "ent_upper_airway > infective > URTI",
+        "top5": [],
+        "cost": 0.0004956400000000001,
+        "calls": 6
+      }
+    },
+    {
+      "i": 9,
+      "truth": "Localized edema",
+      "ddx_top5": [
+        "Localized edema",
+        "Chagas",
+        "Anaphylaxis"
+      ],
+      "state_chars": 1311,
+      "hier": {
+        "pred": "Localized edema",
+        "label": "Localised oedema - swelling of a limb or region from venous, lymphatic or allergic cause",
+        "conf": 0.77,
+        "path": "cardiovascular > vascular > Localized edema",
+        "top5": [],
+        "cost": 0.00052104,
+        "calls": 6
+      }
+    },
+    {
+      "i": 10,
+      "truth": "Localized edema",
+      "ddx_top5": [
+        "Localized edema",
+        "Chagas",
+        "Anaphylaxis"
+      ],
+      "state_chars": 1213,
+      "hier": {
+        "pred": "Localized edema",
+        "label": "Localised oedema - swelling of a limb or region from venous, lymphatic or allergic cause",
+        "conf": 0.83,
+        "path": "cardiovascular > vascular > Localized edema",
+        "top5": [],
+        "cost": 0.0005149600000000001,
+        "calls": 6
+      }
+    },
+    {
+      "i": 11,
+      "truth": "GERD",
+      "ddx_top5": [
+        "GERD",
+        "Bronchitis",
+        "Spontaneous rib fracture",
+        "Unstable angina",
+        "Possible NSTEMI / STEMI"
+      ],
+      "state_chars": 1231,
+      "hier": {
+        "pred": "GERD",
+        "label": "Gastro-oesophageal reflux - heartburn and acid regurgitation",
+        "conf": 1,
+        "path": "acute_abdominal > degenerative_functional > GERD",
+        "top5": [],
+        "cost": 0.00047456,
+        "calls": 6
+      }
+    },
+    {
+      "i": 12,
+      "truth": "Atrial fibrillation",
+      "ddx_top5": [
+        "Atrial fibrillation",
+        "PSVT",
+        "Acute pulmonary edema",
+        "Myocarditis",
+        "Pulmonary embolism"
+      ],
+      "state_chars": 929,
+      "hier": {
+        "pred": "ESCALATED:no_condition_in_cell_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.0005028400000000001,
+        "calls": 6,
+        "escalated": true
+      }
+    },
+    {
+      "i": 13,
+      "truth": "Inguinal hernia",
+      "ddx_top5": [
+        "Bronchitis",
+        "Inguinal hernia"
+      ],
+      "state_chars": 1042,
+      "hier": {
+        "pred": "ESCALATED:no_mechanism_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00039728000000000007,
+        "calls": 4,
+        "escalated": true
+      }
+    },
+    {
+      "i": 14,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Bronchitis",
+        "Acute COPD exacerbation / infection",
+        "HIV (initial infection)",
+        "Influenza",
+        "Tuberculosis"
+      ],
+      "state_chars": 914,
+      "hier": {
+        "pred": "GERD",
+        "label": "Gastro-oesophageal reflux - burning retrosternal pain, acid taste, worse lying down",
+        "conf": 0.62,
+        "path": "chest_pain > degenerative_functional > GERD",
+        "top5": [],
+        "cost": 0.00048032,
+        "calls": 6
+      }
+    },
+    {
+      "i": 15,
+      "truth": "Epiglottitis",
+      "ddx_top5": [
+        "Epiglottitis",
+        "Possible NSTEMI / STEMI",
+        "Larygospasm",
+        "Pulmonary embolism",
+        "Acute laryngitis"
+      ],
+      "state_chars": 1033,
+      "hier": {
+        "pred": "Epiglottitis",
+        "label": "Epiglottitis - severe sore throat, drooling, muffled voice",
+        "conf": 0.31,
+        "path": "ent_upper_airway > infective > Epiglottitis",
+        "top5": [],
+        "cost": 0.00050268,
+        "calls": 6
+      }
+    },
+    {
+      "i": 16,
+      "truth": "Pulmonary embolism",
+      "ddx_top5": [
+        "Pulmonary embolism",
+        "Spontaneous pneumothorax",
+        "Possible NSTEMI / STEMI",
+        "Panic attack",
+        "Unstable angina"
+      ],
+      "state_chars": 1323,
+      "hier": {
+        "pred": "Pulmonary embolism",
+        "label": "Pulmonary embolism - clot in the lung arteries",
+        "conf": 0.99,
+        "path": "chest_pain > vascular > Pulmonary embolism",
+        "top5": [],
+        "cost": 0.00052324,
+        "calls": 6
+      }
+    },
+    {
+      "i": 17,
+      "truth": "HIV (initial infection)",
+      "ddx_top5": [
+        "HIV (initial infection)",
+        "Chagas",
+        "Influenza",
+        "Anemia",
+        "Scombroid food poisoning"
+      ],
+      "state_chars": 1788,
+      "hier": {
+        "pred": "ESCALATED:no_condition_in_cell_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00052548,
+        "calls": 6,
+        "escalated": true
+      }
+    },
+    {
+      "i": 18,
+      "truth": "Pericarditis",
+      "ddx_top5": [
+        "Pericarditis",
+        "Spontaneous pneumothorax",
+        "Pulmonary embolism",
+        "Possible NSTEMI / STEMI",
+        "PSVT"
+      ],
+      "state_chars": 1143,
+      "hier": {
+        "pred": "Pericarditis",
+        "label": "Pericarditis - inflamed heart lining",
+        "conf": 1,
+        "path": "chest_pain > autoimmune_inflammatory > Pericarditis",
+        "top5": [],
+        "cost": 0.00049984,
+        "calls": 6
+      }
+    },
+    {
+      "i": 19,
+      "truth": "Pancreatic neoplasm",
+      "ddx_top5": [
+        "Pancreatic neoplasm",
+        "Anaphylaxis",
+        "GERD",
+        "Scombroid food poisoning",
+        "Anemia"
+      ],
+      "state_chars": 1357,
+      "hier": {
+        "pred": "Pancreatic neoplasm",
+        "label": "Pancreatic neoplasm - pancreatic cancer",
+        "conf": 0.78,
+        "path": "constitutional_chronic > neoplastic > Pancreatic neoplasm",
+        "top5": [],
+        "cost": 0.00050168,
+        "calls": 6
+      }
+    },
+    {
+      "i": 20,
+      "truth": "Acute laryngitis",
+      "ddx_top5": [
+        "Acute laryngitis",
+        "Bronchitis",
+        "Tuberculosis",
+        "Epiglottitis",
+        "Viral pharyngitis"
+      ],
+      "state_chars": 1001,
+      "hier": {
+        "pred": "Viral pharyngitis",
+        "label": "Viral pharyngitis - sore throat",
+        "conf": 0.71,
+        "path": "ent_upper_airway > infective > Viral pharyngitis",
+        "top5": [],
+        "cost": 0.00050516,
+        "calls": 6
+      }
+    },
+    {
+      "i": 21,
+      "truth": "Acute rhinosinusitis",
+      "ddx_top5": [
+        "Acute rhinosinusitis",
+        "Chronic rhinosinusitis",
+        "Acute laryngitis",
+        "Chagas"
+      ],
+      "state_chars": 1138,
+      "hier": {
+        "pred": "Acute rhinosinusitis",
+        "label": "Acute rhinosinusitis - facial pain and blocked nose, under 12 weeks",
+        "conf": 0.99,
+        "path": "ent_upper_airway > infective > Acute rhinosinusitis",
+        "top5": [],
+        "cost": 0.00051236,
+        "calls": 6
+      }
+    },
+    {
+      "i": 22,
+      "truth": "Viral pharyngitis",
+      "ddx_top5": [
+        "Viral pharyngitis",
+        "Bronchitis",
+        "URTI",
+        "Possible NSTEMI / STEMI",
+        "Unstable angina"
+      ],
+      "state_chars": 913,
+      "hier": {
+        "pred": "Viral pharyngitis",
+        "label": "Viral pharyngitis - sore throat",
+        "conf": 0.63,
+        "path": "ent_upper_airway > infective > Viral pharyngitis",
+        "top5": [],
+        "cost": 0.00049892,
+        "calls": 6
+      }
+    },
+    {
+      "i": 23,
+      "truth": "URTI",
+      "ddx_top5": [
+        "URTI",
+        "Bronchitis",
+        "Influenza",
+        "Tuberculosis",
+        "HIV (initial infection)"
+      ],
+      "state_chars": 894,
+      "hier": {
+        "pred": "URTI",
+        "label": "Upper respiratory tract infection (common cold)",
+        "conf": 0.38,
+        "path": "acute_respiratory > infective > URTI",
+        "top5": [],
+        "cost": 0.00056548,
+        "calls": 6
+      }
+    },
+    {
+      "i": 24,
+      "truth": "Anemia",
+      "ddx_top5": [
+        "Anemia",
+        "Acute pulmonary edema",
+        "Guillain-Barr\u00e9 syndrome",
+        "Cluster headache",
+        "Acute dystonic reactions"
+      ],
+      "state_chars": 1258,
+      "hier": {
+        "pred": "Anemia",
+        "label": "Anaemia - low haemoglobin causing pallor, fatigue and breathlessness",
+        "conf": 0.99,
+        "path": "haematological > deficiency_nutritional > Anemia",
+        "top5": [],
+        "cost": 0.00047808,
+        "calls": 6
+      }
+    },
+    {
+      "i": 25,
+      "truth": "Cluster headache",
+      "ddx_top5": [
+        "Cluster headache",
+        "Chagas",
+        "Anemia"
+      ],
+      "state_chars": 1013,
+      "hier": {
+        "pred": "ESCALATED:no_mechanism_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00039284,
+        "calls": 4,
+        "escalated": true
+      }
+    },
+    {
+      "i": 26,
+      "truth": "Sarcoidosis",
+      "ddx_top5": [
+        "Sarcoidosis",
+        "Acute dystonic reactions",
+        "Myocarditis",
+        "Pulmonary neoplasm",
+        "Pulmonary embolism"
+      ],
+      "state_chars": 1345,
+      "hier": {
+        "pred": "ESCALATED:no_condition_in_cell_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00048904,
+        "calls": 6,
+        "escalated": true
+      }
+    },
+    {
+      "i": 27,
+      "truth": "Epiglottitis",
+      "ddx_top5": [
+        "Epiglottitis",
+        "Myasthenia gravis",
+        "Possible NSTEMI / STEMI",
+        "Unstable angina",
+        "HIV (initial infection)"
+      ],
+      "state_chars": 1364,
+      "hier": {
+        "pred": "Epiglottitis",
+        "label": "Epiglottitis - severe sore throat, drooling, muffled voice",
+        "conf": 0.72,
+        "path": "ent_upper_airway > infective > Epiglottitis",
+        "top5": [],
+        "cost": 0.00051948,
+        "calls": 6
+      }
+    },
+    {
+      "i": 28,
+      "truth": "Pericarditis",
+      "ddx_top5": [
+        "Pericarditis",
+        "Spontaneous pneumothorax",
+        "Pulmonary embolism",
+        "PSVT",
+        "GERD"
+      ],
+      "state_chars": 1047,
+      "hier": {
+        "pred": "Pulmonary embolism",
+        "label": "Pulmonary embolism - clot in the lung arteries",
+        "conf": 0.98,
+        "path": "chest_pain > vascular > Pulmonary embolism",
+        "top5": [],
+        "cost": 0.00050548,
+        "calls": 6
+      }
+    },
+    {
+      "i": 29,
+      "truth": "Larygospasm",
+      "ddx_top5": [
+        "Larygospasm"
+      ],
+      "state_chars": 565,
+      "hier": {
+        "pred": "Bronchospasm / acute asthma exacerbation",
+        "label": "Bronchospasm or acute asthma exacerbation",
+        "conf": 0.95,
+        "path": "acute_respiratory > allergic_hypersensitivity > Bronchospasm / acute asthma exacerbation",
+        "top5": [],
+        "cost": 0.00048296,
+        "calls": 6
+      }
+    },
+    {
+      "i": 30,
+      "truth": "Acute otitis media",
+      "ddx_top5": [
+        "Acute otitis media"
+      ],
+      "state_chars": 917,
+      "hier": {
+        "pred": "Acute otitis media",
+        "label": "Acute otitis media - middle ear infection, ear pain",
+        "conf": 1,
+        "path": "ent_upper_airway > infective > Acute otitis media",
+        "top5": [],
+        "cost": 0.00049516,
+        "calls": 6
+      }
+    },
+    {
+      "i": 31,
+      "truth": "Panic attack",
+      "ddx_top5": [
+        "Panic attack",
+        "PSVT",
+        "Anaphylaxis",
+        "GERD",
+        "Inguinal hernia"
+      ],
+      "state_chars": 1561,
+      "hier": {
+        "pred": "Panic attack",
+        "label": "Panic attack - sudden intense fear with palpitations, tingling and breathlessness",
+        "conf": 0.96,
+        "path": "psychiatric_functional > psychological_functional > Panic attack",
+        "top5": [],
+        "cost": 0.00049936,
+        "calls": 6
+      }
+    },
+    {
+      "i": 32,
+      "truth": "Stable angina",
+      "ddx_top5": [
+        "Unstable angina",
+        "Stable angina",
+        "Possible NSTEMI / STEMI",
+        "Myocarditis",
+        "Atrial fibrillation"
+      ],
+      "state_chars": 1378,
+      "hier": {
+        "pred": "Stable angina",
+        "label": "Stable angina - cardiac chest pain predictably on exertion, relieved by rest",
+        "conf": 0.4,
+        "path": "chest_pain > vascular > Stable angina",
+        "top5": [],
+        "cost": 0.00052508,
+        "calls": 6
+      }
+    },
+    {
+      "i": 33,
+      "truth": "Acute dystonic reactions",
+      "ddx_top5": [
+        "Acute dystonic reactions",
+        "Pulmonary embolism",
+        "Guillain-Barr\u00e9 syndrome",
+        "Atrial fibrillation",
+        "Myocarditis"
+      ],
+      "state_chars": 767,
+      "hier": {
+        "pred": "Acute dystonic reactions",
+        "label": "Acute dystonic reaction - abnormal sustained muscle spasms after a drug, often antipsychotic or antiemetic",
+        "conf": 0.76,
+        "path": "acute_neurological > toxic_drug > Acute dystonic reactions",
+        "top5": [],
+        "cost": 0.00044820000000000005,
+        "calls": 6
+      }
+    },
+    {
+      "i": 34,
+      "truth": "Atrial fibrillation",
+      "ddx_top5": [
+        "PSVT",
+        "Anemia",
+        "Guillain-Barr\u00e9 syndrome",
+        "Myocarditis",
+        "Atrial fibrillation"
+      ],
+      "state_chars": 881,
+      "hier": {
+        "pred": "ESCALATED:no_mechanism_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00041248,
+        "calls": 4,
+        "escalated": true
+      }
+    },
+    {
+      "i": 35,
+      "truth": "Pneumonia",
+      "ddx_top5": [
+        "Pneumonia",
+        "Pulmonary neoplasm",
+        "Bronchitis",
+        "Bronchiectasis",
+        "Tuberculosis"
+      ],
+      "state_chars": 2303,
+      "hier": {
+        "pred": "Bronchitis",
+        "label": "Bronchitis - infection of the larger airways, productive cough, no consolidation",
+        "conf": 0.41,
+        "path": "acute_respiratory > infective > Bronchitis",
+        "top5": [],
+        "cost": 0.00065012,
+        "calls": 6
+      }
+    },
+    {
+      "i": 36,
+      "truth": "Inguinal hernia",
+      "ddx_top5": [
+        "Inguinal hernia",
+        "Bronchitis",
+        "Anaphylaxis",
+        "Whooping cough",
+        "Scombroid food poisoning"
+      ],
+      "state_chars": 1341,
+      "hier": {
+        "pred": "Inguinal hernia",
+        "label": "Inguinal hernia - groin lump, worse on straining",
+        "conf": 0.87,
+        "path": "acute_abdominal > structural_surgical > Inguinal hernia",
+        "top5": [],
+        "cost": 0.0004938,
+        "calls": 6
+      }
+    },
+    {
+      "i": 37,
+      "truth": "Pneumonia",
+      "ddx_top5": [
+        "Pneumonia",
+        "Tuberculosis",
+        "Bronchitis",
+        "Influenza",
+        "GERD"
+      ],
+      "state_chars": 1840,
+      "hier": {
+        "pred": "ESCALATED:no_condition_in_cell_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.000531,
+        "calls": 6,
+        "escalated": true
+      }
+    },
+    {
+      "i": 38,
+      "truth": "Epiglottitis",
+      "ddx_top5": [
+        "Epiglottitis",
+        "Myasthenia gravis",
+        "Acute laryngitis",
+        "HIV (initial infection)",
+        "Larygospasm"
+      ],
+      "state_chars": 1349,
+      "hier": {
+        "pred": "Epiglottitis",
+        "label": "Epiglottitis - severe sore throat, drooling, muffled voice",
+        "conf": 0.38,
+        "path": "ent_upper_airway > infective > Epiglottitis",
+        "top5": [],
+        "cost": 0.000519,
+        "calls": 6
+      }
+    },
+    {
+      "i": 39,
+      "truth": "Viral pharyngitis",
+      "ddx_top5": [
+        "Viral pharyngitis",
+        "Bronchitis",
+        "Acute laryngitis",
+        "URTI",
+        "Possible NSTEMI / STEMI"
+      ],
+      "state_chars": 873,
+      "hier": {
+        "pred": "URTI",
+        "label": "Upper respiratory tract infection (common cold)",
+        "conf": 0.67,
+        "path": "ent_upper_airway > infective > URTI",
+        "top5": [],
+        "cost": 0.00049636,
+        "calls": 6
+      }
+    },
+    {
+      "i": 40,
+      "truth": "URTI",
+      "ddx_top5": [
+        "URTI",
+        "Influenza",
+        "HIV (initial infection)",
+        "Bronchitis",
+        "Tuberculosis"
+      ],
+      "state_chars": 1125,
+      "hier": {
+        "pred": "Acute rhinosinusitis",
+        "label": "Acute rhinosinusitis - facial pain and blocked nose, under 12 weeks",
+        "conf": 0.94,
+        "path": "ent_upper_airway > infective > Acute rhinosinusitis",
+        "top5": [],
+        "cost": 0.000511,
+        "calls": 6
+      }
+    }
+  ],
+  "hier_score": {
+    "top1": 22,
+    "escalated": 8,
+    "n": 40,
+    "top1_pct": 55.0,
+    "precision_when_answered": 68.8,
+    "cost_usd": 0.01969
+  }
+}

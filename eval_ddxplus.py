@@ -127,9 +127,9 @@ def flat_arm(state, conditions):
             "cost": jev.cost, "calls": jev.calls}
 
 
-def hier_arm(state, conditions):
+def hier_arm(state, conditions, grid="ddxplus"):
     jev = Jev(KEY)
-    tr = HR.route(state, jev, verbose=False, gate=True)
+    tr = HR.route(state, jev, verbose=False, gate=True, grid=grid)
     if tr.get("escalated"):
         return {"pred": f"ESCALATED:{tr['reason']}", "conf": None,
                 "top5": [], "cost": jev.cost, "calls": jev.calls,
@@ -146,6 +146,7 @@ def main():
     ap.add_argument("--arm", choices=["flat", "hier", "both"], default="flat")
     ap.add_argument("--out", default="ddxplus_eval.json")
     ap.add_argument("--seed", type=int, default=7)
+    ap.add_argument("--grid", default="ddxplus")
     args = ap.parse_args()
 
     if not KEY:
@@ -184,12 +185,13 @@ def main():
 
         if args.arm in ("hier", "both"):
             try:
-                h = hier_arm(state, conditions)
+                h = hier_arm(state, conditions, grid=args.grid)
             except Exception as e:
                 h = {"error": str(e)[:120]}
             rec["hier"] = h
-            print(f"     hier={str(h.get('pred'))[:40]:40s} "
-                  f"{h.get('path', '')}", flush=True)
+            hok = h.get("pred") == truth
+            print(f"     hier={str(h.get('pred'))[:34]:34s} "
+                  f"{'HIT ' if hok else '    '} {h.get('path', '')}", flush=True)
 
         results.append(rec)
 
@@ -209,10 +211,17 @@ def main():
               f"${cost:.4f}")
     if args.arm in ("hier", "both"):
         esc = sum(1 for r in results if r.get("hier", {}).get("escalated"))
+        hits = sum(1 for r in results if r.get("hier", {}).get("pred") == r["truth"])
         cost = sum(r.get("hier", {}).get("cost", 0) for r in results)
-        out["hier_score"] = {"escalated": esc, "n": len(results),
+        answered = len(results) - esc
+        prec = (100 * hits / answered) if answered else 0.0
+        out["hier_score"] = {"top1": hits, "escalated": esc, "n": len(results),
+                             "top1_pct": round(100 * hits / len(results), 1),
+                             "precision_when_answered": round(prec, 1),
                              "cost_usd": round(cost, 5)}
-        print(f"HIER   escalated {esc}/{len(results)}   ${cost:.4f}")
+        print(f"HIER   top1 {hits}/{len(results)} ({100*hits/len(results):.0f}%)   "
+              f"escalated {esc}/{len(results)}   "
+              f"precision-when-answered {prec:.0f}%   ${cost:.4f}")
 
     (HERE / args.out).write_text(json.dumps(out, indent=2))
     print(f"saved {args.out}")

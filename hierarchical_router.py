@@ -26,6 +26,9 @@ import argparse, json, math, os, pathlib, sys, time
 import requests
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE))
+from grids import GRIDS, SYNDROMES as GRID_SYNDROMES, SIEVE as GRID_SIEVE
+
 ENDPOINT = "https://api.openjev.sh/v1/systemone"
 
 
@@ -140,184 +143,21 @@ QUALIFIERS = {
 }
 
 
-# ------------------------------------------------------- L2  syndrome routing
-SYNDROMES = {
-    "acute_febrile_undifferentiated":
-        "Acute fever with no clear localising focus",
-    "acute_respiratory":
-        "Cough, breathlessness, sore throat or chest symptoms predominate",
-    "acute_abdominal":
-        "Abdominal pain, vomiting or bowel disturbance predominate",
-    "acute_neurological":
-        "Headache, confusion, weakness, fits or altered consciousness predominate",
-    "acute_diarrhoeal":
-        "Diarrhoea is the dominant problem",
-    "jaundice_hepatic":
-        "Jaundice or liver dysfunction predominates",
-    "urogenital":
-        "Urinary or genital symptoms predominate",
-    "skin_soft_tissue":
-        "Rash, skin lesions or soft tissue swelling predominate",
-    "musculoskeletal":
-        "Joint or muscle pain predominates",
-    "haematological":
-        "Bleeding, bruising, pallor or lymph node enlargement predominate",
-    "cardiovascular":
-        "Chest pain, palpitations or swelling of the legs predominate",
-    "constitutional_chronic":
-        "Long-standing weight loss, night sweats or fatigue predominate",
-}
+# ---------------- L2/L3/L4 content now lives in grids.py (validated) --------
+# SYNDROMES, SIEVE and the (syndrome, mechanism) -> conditions grid are
+# imported. Select with --grid; validate with validate_grids.py.
+SYNDROMES = GRID_SYNDROMES
+SIEVE = GRID_SIEVE
+SCRIPTS = GRIDS["tropical"]          # default; overridden by set_grid()
 
 
-# ------------------------------------------ L3  surgical sieve (VINDICATE-ish)
-SIEVE = {
-    "infective": "Caused by an infection",
-    "autoimmune_inflammatory": "Autoimmune or inflammatory process",
-    "neoplastic": "Cancer or a blood malignancy",
-    "vascular": "Blocked, burst or inflamed blood vessels, or a clot",
-    "metabolic_endocrine": "A metabolic, hormonal or electrolyte disturbance",
-    "toxic_drug": "A drug reaction, poisoning, or toxin",
-    "structural_surgical": "An obstruction, perforation, abscess or other surgical problem",
-    "degenerative_functional": "A degenerative or functional disorder",
-}
-
-
-# ---------------------------------- L4  illness scripts, indexed by grid cell
-# Each entry: label, plus the script fields a clinician carries.
-SCRIPTS = {
-    ("acute_febrile_undifferentiated", "infective"): {
-        "dengue": {"label": "Dengue fever", "incubation": (4, 10),
-                   "exposure": "day-biting Aedes mosquito, urban"},
-        "malaria": {"label": "Malaria", "incubation": (7, 30),
-                    "exposure": "night-biting Anopheles mosquito"},
-        "typhoid": {"label": "Enteric fever (typhoid)", "incubation": (6, 30),
-                    "exposure": "contaminated food or water"},
-        "leptospirosis": {"label": "Leptospirosis", "incubation": (2, 30),
-                          "exposure": "flood water, mud, animal urine"},
-        "scrub_typhus": {"label": "Scrub typhus", "incubation": (6, 21),
-                         "exposure": "mite bite in scrub or grassland"},
-        "influenza": {"label": "Influenza", "incubation": (1, 4),
-                      "exposure": "ill contacts, airborne"},
-        "chikungunya": {"label": "Chikungunya", "incubation": (2, 12),
-                        "exposure": "day-biting Aedes mosquito"},
-        "covid19": {"label": "COVID-19", "incubation": (2, 14),
-                    "exposure": "ill contacts, airborne"},
-        "brucellosis": {"label": "Brucellosis", "incubation": (5, 60),
-                        "exposure": "unpasteurised dairy, livestock"},
-        "q_fever": {"label": "Q fever", "incubation": (14, 39),
-                    "exposure": "livestock, birth products"},
-        "murine_typhus": {"label": "Murine typhus", "incubation": (6, 14),
-                          "exposure": "rat flea"},
-        "visceral_leishmaniasis": {"label": "Visceral leishmaniasis (kala-azar)",
-                                   "incubation": (60, 180),
-                                   "exposure": "sandfly bite"},
-        "melioidosis": {"label": "Melioidosis", "incubation": (1, 21),
-                        "exposure": "soil and surface water, paddy fields"},
-        "ebv_mono": {"label": "EBV infectious mononucleosis", "incubation": (30, 50),
-                     "exposure": "saliva contact"},
-        "hiv_seroconversion": {"label": "Acute HIV seroconversion",
-                               "incubation": (14, 28), "exposure": "sexual or blood"},
-        "tuberculosis": {"label": "Tuberculosis", "incubation": (30, 3650),
-                         "exposure": "prolonged contact"},
-        "hepatitis_a": {"label": "Acute hepatitis A", "incubation": (15, 50),
-                        "exposure": "contaminated food or water"},
-        "amoebic_liver_abscess": {"label": "Amoebic liver abscess",
-                                  "incubation": (14, 150),
-                                  "exposure": "contaminated food or water"},
-    },
-    ("acute_febrile_undifferentiated", "autoimmune_inflammatory"): {
-        "sle_flare": {"label": "Systemic lupus erythematosus flare"},
-        "stills_disease": {"label": "Adult-onset Still's disease"},
-        "vasculitis": {"label": "Systemic vasculitis"},
-        "rheumatic_fever": {"label": "Acute rheumatic fever"},
-        "sarcoidosis": {"label": "Sarcoidosis"},
-        "kawasaki": {"label": "Kawasaki disease"},
-        "haemophagocytic": {"label": "Haemophagocytic lymphohistiocytosis"},
-    },
-    ("acute_febrile_undifferentiated", "neoplastic"): {
-        "lymphoma_fever": {"label": "Lymphoma presenting as fever"},
-        "leukaemia_fever": {"label": "Acute leukaemia presenting as fever"},
-        "solid_tumour_fever": {"label": "Solid tumour with paraneoplastic fever"},
-    },
-    ("acute_febrile_undifferentiated", "toxic_drug"): {
-        "drug_fever": {"label": "Drug fever"},
-        "serotonin_syndrome": {"label": "Serotonin syndrome"},
-        "neuroleptic_malignant": {"label": "Neuroleptic malignant syndrome"},
-        "heat_stroke": {"label": "Heat stroke"},
-    },
-    ("acute_febrile_undifferentiated", "metabolic_endocrine"): {
-        "thyroid_storm": {"label": "Thyroid storm"},
-        "adrenal_crisis": {"label": "Adrenal crisis"},
-    },
-    ("acute_febrile_undifferentiated", "structural_surgical"): {
-        "appendicitis": {"label": "Acute appendicitis"},
-        "cholangitis": {"label": "Acute cholangitis"},
-        "liver_abscess_pyogenic": {"label": "Pyogenic liver abscess"},
-        "deep_abscess": {"label": "Deep-seated abscess"},
-        "endocarditis": {"label": "Infective endocarditis"},
-    },
-    ("acute_respiratory", "infective"): {
-        "influenza": {"label": "Influenza", "incubation": (1, 4)},
-        "covid19": {"label": "COVID-19", "incubation": (2, 14)},
-        "bacterial_pneumonia": {"label": "Community-acquired bacterial pneumonia"},
-        "tuberculosis": {"label": "Tuberculosis", "incubation": (30, 3650)},
-        "mycoplasma": {"label": "Mycoplasma pneumonia"},
-        "legionella": {"label": "Legionnaires disease", "incubation": (2, 10)},
-        "pertussis": {"label": "Pertussis"},
-    },
-    ("acute_abdominal", "structural_surgical"): {
-        "appendicitis": {"label": "Acute appendicitis"},
-        "cholecystitis": {"label": "Acute cholecystitis"},
-        "perforation": {"label": "Perforated viscus"},
-        "obstruction": {"label": "Intestinal obstruction"},
-        "diverticulitis": {"label": "Diverticulitis"},
-    },
-    ("musculoskeletal", "autoimmune_inflammatory"): {
-        "sle_flare": {"label": "Systemic lupus erythematosus flare"},
-        "rheumatoid_arthritis": {"label": "Rheumatoid arthritis"},
-        "stills_disease": {"label": "Adult-onset Still's disease"},
-        "vasculitis": {"label": "Systemic vasculitis"},
-        "reactive_arthritis": {"label": "Reactive arthritis"},
-        "psoriatic_arthritis": {"label": "Psoriatic arthritis"},
-        "polymyalgia": {"label": "Polymyalgia rheumatica"},
-        "gout_pseudogout": {"label": "Gout or pseudogout"},
-        "dermatomyositis": {"label": "Dermatomyositis"},
-    },
-    ("musculoskeletal", "infective"): {
-        "septic_arthritis": {"label": "Septic arthritis"},
-        "osteomyelitis": {"label": "Osteomyelitis"},
-        "chikungunya": {"label": "Chikungunya arthritis", "incubation": (2, 12)},
-        "rheumatic_fever": {"label": "Acute rheumatic fever"},
-        "tb_spine": {"label": "Spinal tuberculosis"},
-    },
-    ("constitutional_chronic", "autoimmune_inflammatory"): {
-        "sle_flare": {"label": "Systemic lupus erythematosus flare"},
-        "sarcoidosis": {"label": "Sarcoidosis"},
-        "vasculitis": {"label": "Systemic vasculitis"},
-        "ibd": {"label": "Inflammatory bowel disease"},
-    },
-    ("constitutional_chronic", "neoplastic"): {
-        "lymphoma": {"label": "Lymphoma"},
-        "leukaemia": {"label": "Leukaemia"},
-        "solid_tumour": {"label": "Occult solid tumour"},
-        "myeloma": {"label": "Multiple myeloma"},
-    },
-    ("constitutional_chronic", "infective"): {
-        "tuberculosis": {"label": "Tuberculosis", "incubation": (30, 3650)},
-        "hiv_chronic": {"label": "Chronic HIV infection"},
-        "brucellosis": {"label": "Brucellosis", "incubation": (5, 60)},
-        "visceral_leishmaniasis": {"label": "Visceral leishmaniasis", "incubation": (60, 180)},
-        "endocarditis": {"label": "Subacute infective endocarditis"},
-    },
-    ("acute_neurological", "infective"): {
-        "bacterial_meningitis": {"label": "Bacterial meningitis"},
-        "viral_meningitis": {"label": "Viral meningitis"},
-        "cerebral_malaria": {"label": "Cerebral malaria"},
-        "japanese_encephalitis": {"label": "Japanese encephalitis"},
-        "hsv_encephalitis": {"label": "HSV encephalitis"},
-        "tuberculous_meningitis": {"label": "Tuberculous meningitis"},
-    },
-}
+def set_grid(name):
+    """Swap the active condition grid (see grids.GRIDS)."""
+    global SCRIPTS
+    if name not in GRIDS:
+        raise SystemExit(f"unknown grid {name!r}; have {sorted(GRIDS)}")
+    SCRIPTS = GRIDS[name]
+    return SCRIPTS
 
 
 # ------------------------------------------------------------------ utilities
@@ -345,8 +185,10 @@ def fmt(dist, n=4):
 
 
 # --------------------------------------------------------------- the pipeline
-def route(state, jev, verbose=True, gate=True):
-    trace = {"levels": [], "escalated": False, "reason": None}
+def route(state, jev, verbose=True, gate=True, grid=None):
+    """grid=None uses the module default (set via set_grid or --grid)."""
+    g = GRIDS[grid] if grid else SCRIPTS
+    trace = {"levels": [], "escalated": False, "reason": None, "grid": grid or "default"}
 
     def say(*a):
         if verbose:
@@ -395,7 +237,7 @@ def route(state, jev, verbose=True, gate=True):
         return trace
 
     # ---- L3  surgical sieve ------------------------------------------------
-    available = sorted({m for (s, m) in SCRIPTS if s == syn})
+    available = sorted({m for (s, m) in g if s == syn})
     if not available:
         trace["escalated"] = True
         trace["reason"] = f"no_sieve_content_for_{syn}"
@@ -420,7 +262,7 @@ def route(state, jev, verbose=True, gate=True):
         return trace
 
     # ---- L5 gate (applied before L4 so the leaf set is pre-filtered) -------
-    cell = SCRIPTS.get((syn, mech), {})
+    cell = g.get((syn, mech), {})
     if not cell:
         trace["escalated"] = True
         trace["reason"] = f"empty_cell_{syn}_{mech}"
@@ -488,6 +330,7 @@ def main():
     ap.add_argument("state", nargs="?", default="state_a.txt")
     ap.add_argument("--json", dest="jsonout")
     ap.add_argument("--no-gate", action="store_true")
+    ap.add_argument("--grid", choices=sorted(GRIDS), default="tropical")
     ap.add_argument("--quiet", action="store_true")
     args = ap.parse_args()
 
@@ -495,10 +338,11 @@ def main():
     if not key or key == "paste_your_key_here":
         sys.exit("No API key. Set OPENJEV_API_KEY or fill .env")
 
+    set_grid(args.grid)
     state = (HERE / args.state).read_text()
     jev = Jev(key)
     t0 = time.time()
-    print(f"=== {args.state} ===")
+    print(f"=== {args.state}   grid={args.grid} ===")
     tr = route(state, jev, verbose=not args.quiet, gate=not args.no_gate)
     dt = time.time() - t0
 

@@ -36,6 +36,10 @@ research work on `main` never touches the live site.
     SCALING.md            measured limits of the flat option set (255 cap)
     scaling_probe*.py     the probes behind SCALING.md
     HIERARCHY.md          clinical reasoning frameworks + head-to-head results
+    grids.py              (syndrome, mechanism) -> conditions; tropical + ddxplus
+    validate_grids.py     mechanical grid checks; exits non-zero on any failure
+    DATASETS.md           public datasets + measured accuracy against DDXPlus
+    eval_ddxplus.py       evaluation harness against DDXPlus ground truth
     hierarchical_router.py  ROWS / qualifiers / syndrome / sieve / scripts routing
     compare_arms.py       flat-255 vs hierarchical, same states same day
     state_e.txt           meningococcal meningitis (red flags must fire)
@@ -222,6 +226,10 @@ with the key server-side.
     python3 triage_loop.py state_a.txt --rounds 8 --phraser ollama --model qwen2.5:3b
     python3 triage_loop.py state_a.txt --rounds 8 --phraser openrouter
     python3 triage_loop.py state_d.txt --rounds 6            # escalation path
+
+    python3 validate_grids.py                                # ALWAYS run after editing grids.py
+    python3 hierarchical_router.py state_d.txt --grid tropical
+    python3 eval_ddxplus.py --n 40 --offset 30 --arm both --grid ddxplus
 
 `--truth` drives a SYNTHETIC patient that answers from a hidden profile. It
 exists to observe question-selection behaviour and measures nothing about real
