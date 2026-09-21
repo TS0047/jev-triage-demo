@@ -1,0 +1,46 @@
+{
+ "none (learned)": [
+  0.993,
+  1.0
+ ],
+ "swap 2% of cells": [
+  0.979,
+  1.0
+ ],
+ "swap 5% of cells": [
+  0.978,
+  1.0
+ ],
+ "swap 10% of cells": [
+  0.9455,
+  0.9985
+ ],
+ "swap 20% of cells": [
+  0.872,
+  0.993
+ ],
+ "swap 35% of cells": [
+  0.7425,
+  0.9715
+ ],
+ "flip 2% of cells": [
+  0.7845,
+  0.9605
+ ],
+ "flip 5% of cells": [
+  0.465,
+  0.741
+ ],
+ "flip 10% of cells": [
+  0.1205,
+  0.5165
+ ],
+ "flip 20% of cells": [
+  0.0,
+  0.2785
+ ],
+ "flip 35% of cells": [
+  0.0,
+  0.0475
+ ]
+}

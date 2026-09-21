@@ -39,6 +39,10 @@ research work on `main` never touches the live site.
     grids.py              (syndrome, mechanism) -> conditions; tropical + ddxplus
     validate_grids.py     mechanical grid checks; exits non-zero on any failure
     DATASETS.md           public datasets + measured accuracy against DDXPlus
+    MATRIX.md             how likelihoods are set, and how to learn them properly
+    learn_likelihoods_v2.py  applicability-aware MLE over 134k DDXPlus patients
+    compare_matrices.py   held-out: learned vs hand-authored-granularity
+    noise_sensitivity.py  direction-vs-precision sensitivity
     eval_ddxplus.py       evaluation harness against DDXPlus ground truth
     hierarchical_router.py  ROWS / qualifiers / syndrome / sieve / scripts routing
     compare_arms.py       flat-255 vs hierarchical, same states same day
@@ -244,7 +248,10 @@ diagnostic accuracy.
 ## Known limits
 
 - The findings bank is hand-authored and its likelihoods are plausible, not
-  sourced from epidemiological data. Real use needs real priors.
+  sourced from epidemiological data. Real use needs real priors. Measured
+  consequence (MATRIX.md): exact decimals barely matter (rounding everything
+  to a 0.05 grid costs 0.3pp) but DIRECTION dominates - flipping 5% of cells
+  drops accuracy 99.3% -> 46.5%. Review the signs, not the second decimal.
 - Six diseases, one clinical presentation (tropical fever). Anything else must
   hit the escape hatch -- which is tested, but the list is still narrow.
 - **The API caps `choice` at 255 options.** A flat list cannot scale to a real

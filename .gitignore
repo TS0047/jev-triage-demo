@@ -4,3 +4,4 @@ __pycache__/
 
 # DDXPlus mapping files (fetched by eval_ddxplus.py, CC-BY-4.0, not ours to vendor)
 datasets/
+learned_bank*.json
