@@ -1,0 +1,1174 @@
+{
+  "dataset": "aai530-group6/ddxplus",
+  "n": 30,
+  "results": [
+    {
+      "i": 1,
+      "truth": "GERD",
+      "ddx_top5": [
+        "Bronchitis",
+        "GERD",
+        "Possible NSTEMI / STEMI",
+        "Unstable angina",
+        "Pericarditis"
+      ],
+      "state_chars": 1222,
+      "flat": {
+        "pred": "GERD",
+        "conf": 1,
+        "top5": [
+          [
+            "GERD",
+            1
+          ],
+          [
+            "Myasthenia gravis",
+            0
+          ],
+          [
+            "Myocarditis",
+            0
+          ],
+          [
+            "Epiglottitis",
+            0
+          ],
+          [
+            "HIV (initial infection)",
+            0
+          ]
+        ],
+        "cost": 0.00028228000000000004,
+        "calls": 1
+      }
+    },
+    {
+      "i": 2,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Bronchospasm / acute asthma exacerbation",
+        "Influenza",
+        "Viral pharyngitis",
+        "Allergic sinusitis",
+        "Pneumonia"
+      ],
+      "state_chars": 922,
+      "flat": {
+        "pred": "Bronchospasm / acute asthma exacerbation",
+        "conf": 0.19,
+        "top5": [
+          [
+            "Bronchospasm / acute asthma exacerbation",
+            0.22
+          ],
+          [
+            "URTI",
+            0.17
+          ],
+          [
+            "Bronchitis",
+            0.14
+          ],
+          [
+            "GERD",
+            0.13
+          ],
+          [
+            "Bronchiolitis",
+            0.12
+          ]
+        ],
+        "cost": 0.00028336,
+        "calls": 1
+      }
+    },
+    {
+      "i": 3,
+      "truth": "Acute dystonic reactions",
+      "ddx_top5": [
+        "Acute dystonic reactions",
+        "Myasthenia gravis"
+      ],
+      "state_chars": 935,
+      "flat": {
+        "pred": "Acute dystonic reactions",
+        "conf": 0.51,
+        "top5": [
+          [
+            "Acute dystonic reactions",
+            0.53
+          ],
+          [
+            "Larygospasm",
+            0.33
+          ],
+          [
+            "Panic attack",
+            0.1
+          ],
+          [
+            "none_of_these",
+            0.03
+          ],
+          [
+            "Myasthenia gravis",
+            0.01
+          ]
+        ],
+        "cost": 0.00028068,
+        "calls": 1
+      }
+    },
+    {
+      "i": 4,
+      "truth": "Acute laryngitis",
+      "ddx_top5": [
+        "Bronchitis",
+        "Acute laryngitis",
+        "Tuberculosis",
+        "Viral pharyngitis",
+        "Influenza"
+      ],
+      "state_chars": 921,
+      "flat": {
+        "pred": "Viral pharyngitis",
+        "conf": 0.64,
+        "top5": [
+          [
+            "Viral pharyngitis",
+            0.66
+          ],
+          [
+            "URTI",
+            0.27
+          ],
+          [
+            "GERD",
+            0.05
+          ],
+          [
+            "Influenza",
+            0.01
+          ],
+          [
+            "Acute laryngitis",
+            0.01
+          ]
+        ],
+        "cost": 0.00028156000000000004,
+        "calls": 1
+      }
+    },
+    {
+      "i": 5,
+      "truth": "URTI",
+      "ddx_top5": [
+        "URTI",
+        "Influenza",
+        "Bronchitis",
+        "HIV (initial infection)",
+        "Pneumonia"
+      ],
+      "state_chars": 991,
+      "flat": {
+        "pred": "Acute rhinosinusitis",
+        "conf": 0.67,
+        "top5": [
+          [
+            "Acute rhinosinusitis",
+            0.68
+          ],
+          [
+            "Influenza",
+            0.21
+          ],
+          [
+            "URTI",
+            0.1
+          ],
+          [
+            "none_of_these",
+            0.01
+          ],
+          [
+            "Pulmonary neoplasm",
+            0
+          ]
+        ],
+        "cost": 0.00028224,
+        "calls": 1
+      }
+    },
+    {
+      "i": 6,
+      "truth": "URTI",
+      "ddx_top5": [
+        "Pneumonia",
+        "Bronchitis",
+        "Influenza",
+        "URTI",
+        "HIV (initial infection)"
+      ],
+      "state_chars": 1007,
+      "flat": {
+        "pred": "Influenza",
+        "conf": 0.86,
+        "top5": [
+          [
+            "Influenza",
+            0.88
+          ],
+          [
+            "Acute rhinosinusitis",
+            0.09
+          ],
+          [
+            "URTI",
+            0.02
+          ],
+          [
+            "none_of_these",
+            0.01
+          ],
+          [
+            "Allergic sinusitis",
+            0
+          ]
+        ],
+        "cost": 0.00028147999999999997,
+        "calls": 1
+      }
+    },
+    {
+      "i": 7,
+      "truth": "Inguinal hernia",
+      "ddx_top5": [
+        "Inguinal hernia",
+        "Bronchitis",
+        "Anaphylaxis",
+        "Whooping cough",
+        "Scombroid food poisoning"
+      ],
+      "state_chars": 1321,
+      "flat": {
+        "pred": "Inguinal hernia",
+        "conf": 0.83,
+        "top5": [
+          [
+            "Inguinal hernia",
+            0.85
+          ],
+          [
+            "none_of_these",
+            0.12
+          ],
+          [
+            "Localized edema",
+            0.03
+          ],
+          [
+            "Anaphylaxis",
+            0
+          ],
+          [
+            "Allergic sinusitis",
+            0
+          ]
+        ],
+        "cost": 0.00028544,
+        "calls": 1
+      }
+    },
+    {
+      "i": 8,
+      "truth": "Spontaneous pneumothorax",
+      "ddx_top5": [
+        "Unstable angina",
+        "Spontaneous pneumothorax",
+        "Possible NSTEMI / STEMI",
+        "Pulmonary embolism",
+        "Stable angina"
+      ],
+      "state_chars": 1064,
+      "flat": {
+        "pred": "Spontaneous pneumothorax",
+        "conf": 0.39,
+        "top5": [
+          [
+            "Spontaneous pneumothorax",
+            0.41
+          ],
+          [
+            "Unstable angina",
+            0.38
+          ],
+          [
+            "Possible NSTEMI / STEMI",
+            0.17
+          ],
+          [
+            "Pericarditis",
+            0.02
+          ],
+          [
+            "Pulmonary embolism",
+            0.01
+          ]
+        ],
+        "cost": 0.00028388,
+        "calls": 1
+      }
+    },
+    {
+      "i": 9,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "URTI",
+        "Acute COPD exacerbation / infection",
+        "Bronchitis",
+        "Viral pharyngitis",
+        "Pneumonia"
+      ],
+      "state_chars": 1077,
+      "flat": {
+        "pred": "Acute COPD exacerbation / infection",
+        "conf": 0.64,
+        "top5": [
+          [
+            "Acute COPD exacerbation / infection",
+            0.66
+          ],
+          [
+            "Bronchitis",
+            0.22
+          ],
+          [
+            "URTI",
+            0.07
+          ],
+          [
+            "GERD",
+            0.02
+          ],
+          [
+            "Influenza",
+            0.01
+          ]
+        ],
+        "cost": 0.00028456,
+        "calls": 1
+      }
+    },
+    {
+      "i": 10,
+      "truth": "GERD",
+      "ddx_top5": [
+        "GERD",
+        "Bronchitis",
+        "Pericarditis",
+        "Spontaneous rib fracture",
+        "Unstable angina"
+      ],
+      "state_chars": 1286,
+      "flat": {
+        "pred": "GERD",
+        "conf": 0.81,
+        "top5": [
+          [
+            "GERD",
+            0.82
+          ],
+          [
+            "none_of_these",
+            0.16
+          ],
+          [
+            "Boerhaave",
+            0.01
+          ],
+          [
+            "Possible NSTEMI / STEMI",
+            0.01
+          ],
+          [
+            "Cluster headache",
+            0
+          ]
+        ],
+        "cost": 0.00028324000000000003,
+        "calls": 1
+      }
+    },
+    {
+      "i": 11,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Allergic sinusitis",
+        "Bronchitis",
+        "Possible NSTEMI / STEMI",
+        "Panic attack",
+        "Spontaneous pneumothorax"
+      ],
+      "state_chars": 1032,
+      "flat": {
+        "pred": "GERD",
+        "conf": 0.71,
+        "top5": [
+          [
+            "GERD",
+            0.72
+          ],
+          [
+            "Bronchospasm / acute asthma exacerbation",
+            0.13
+          ],
+          [
+            "Acute COPD exacerbation / infection",
+            0.06
+          ],
+          [
+            "Bronchitis",
+            0.04
+          ],
+          [
+            "URTI",
+            0.03
+          ]
+        ],
+        "cost": 0.00028068000000000006,
+        "calls": 1
+      }
+    },
+    {
+      "i": 12,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Acute COPD exacerbation / infection",
+        "URTI",
+        "Viral pharyngitis",
+        "Spontaneous pneumothorax",
+        "GERD"
+      ],
+      "state_chars": 1057,
+      "flat": {
+        "pred": "URTI",
+        "conf": 0.37,
+        "top5": [
+          [
+            "URTI",
+            0.39
+          ],
+          [
+            "Acute COPD exacerbation / infection",
+            0.34
+          ],
+          [
+            "GERD",
+            0.09
+          ],
+          [
+            "Bronchitis",
+            0.06
+          ],
+          [
+            "Viral pharyngitis",
+            0.05
+          ]
+        ],
+        "cost": 0.00028100000000000005,
+        "calls": 1
+      }
+    },
+    {
+      "i": 13,
+      "truth": "URTI",
+      "ddx_top5": [
+        "Bronchitis",
+        "URTI",
+        "Cluster headache",
+        "Chagas",
+        "Anemia"
+      ],
+      "state_chars": 946,
+      "flat": {
+        "pred": "Acute rhinosinusitis",
+        "conf": 0.43,
+        "top5": [
+          [
+            "Acute rhinosinusitis",
+            0.46
+          ],
+          [
+            "Influenza",
+            0.4
+          ],
+          [
+            "URTI",
+            0.07
+          ],
+          [
+            "none_of_these",
+            0.06
+          ],
+          [
+            "Possible NSTEMI / STEMI",
+            0.01
+          ]
+        ],
+        "cost": 0.0002816,
+        "calls": 1
+      }
+    },
+    {
+      "i": 14,
+      "truth": "Anemia",
+      "ddx_top5": [
+        "Anemia",
+        "Acute pulmonary edema",
+        "Guillain-Barr\u00e9 syndrome",
+        "Chagas",
+        "Cluster headache"
+      ],
+      "state_chars": 1369,
+      "flat": {
+        "pred": "Anemia",
+        "conf": 0.92,
+        "top5": [
+          [
+            "Anemia",
+            0.93
+          ],
+          [
+            "none_of_these",
+            0.05
+          ],
+          [
+            "Cluster headache",
+            0.01
+          ],
+          [
+            "Pulmonary embolism",
+            0.01
+          ],
+          [
+            "Possible NSTEMI / STEMI",
+            0
+          ]
+        ],
+        "cost": 0.00028432,
+        "calls": 1
+      }
+    },
+    {
+      "i": 15,
+      "truth": "Larygospasm",
+      "ddx_top5": [
+        "Larygospasm"
+      ],
+      "state_chars": 433,
+      "flat": {
+        "pred": "Bronchospasm / acute asthma exacerbation",
+        "conf": 0.55,
+        "top5": [
+          [
+            "Bronchospasm / acute asthma exacerbation",
+            0.56
+          ],
+          [
+            "Larygospasm",
+            0.19
+          ],
+          [
+            "none_of_these",
+            0.08
+          ],
+          [
+            "Acute COPD exacerbation / infection",
+            0.05
+          ],
+          [
+            "Epiglottitis",
+            0.04
+          ]
+        ],
+        "cost": 0.00027800000000000004,
+        "calls": 1
+      }
+    },
+    {
+      "i": 16,
+      "truth": "URTI",
+      "ddx_top5": [
+        "URTI",
+        "Bronchitis",
+        "Pneumonia",
+        "Bronchiectasis",
+        "Cluster headache"
+      ],
+      "state_chars": 1045,
+      "flat": {
+        "pred": "Acute rhinosinusitis",
+        "conf": 0.98,
+        "top5": [
+          [
+            "Acute rhinosinusitis",
+            0.98
+          ],
+          [
+            "URTI",
+            0.01
+          ],
+          [
+            "Influenza",
+            0.01
+          ],
+          [
+            "Bronchitis",
+            0
+          ],
+          [
+            "SLE",
+            0
+          ]
+        ],
+        "cost": 0.00028292000000000004,
+        "calls": 1
+      }
+    },
+    {
+      "i": 17,
+      "truth": "URTI",
+      "ddx_top5": [
+        "URTI",
+        "Bronchitis",
+        "Pneumonia",
+        "Chronic rhinosinusitis",
+        "Acute rhinosinusitis"
+      ],
+      "state_chars": 1033,
+      "flat": {
+        "pred": "Influenza",
+        "conf": 0.81,
+        "top5": [
+          [
+            "Influenza",
+            0.82
+          ],
+          [
+            "URTI",
+            0.1
+          ],
+          [
+            "Acute rhinosinusitis",
+            0.07
+          ],
+          [
+            "none_of_these",
+            0.01
+          ],
+          [
+            "Pulmonary neoplasm",
+            0
+          ]
+        ],
+        "cost": 0.00028147999999999997,
+        "calls": 1
+      }
+    },
+    {
+      "i": 18,
+      "truth": "Chronic rhinosinusitis",
+      "ddx_top5": [
+        "Viral pharyngitis",
+        "Chronic rhinosinusitis",
+        "Cluster headache",
+        "Acute rhinosinusitis",
+        "Bronchitis"
+      ],
+      "state_chars": 1128,
+      "flat": {
+        "error": "HTTP 503: {\"error\":{\"message\":\"HTTP 503: upstream connect error or disconnect/reset before headers. retried and the late"
+      }
+    },
+    {
+      "i": 19,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Pneumonia",
+        "Bronchospasm / acute asthma exacerbation",
+        "Bronchitis",
+        "Tuberculosis",
+        "Atrial fibrillation"
+      ],
+      "state_chars": 983,
+      "flat": {
+        "pred": "Bronchitis",
+        "conf": 0.37,
+        "top5": [
+          [
+            "Bronchitis",
+            0.39
+          ],
+          [
+            "Pneumonia",
+            0.32
+          ],
+          [
+            "Bronchospasm / acute asthma exacerbation",
+            0.17
+          ],
+          [
+            "GERD",
+            0.05
+          ],
+          [
+            "Bronchiolitis",
+            0.03
+          ]
+        ],
+        "cost": 0.00028048,
+        "calls": 1
+      }
+    },
+    {
+      "i": 20,
+      "truth": "Panic attack",
+      "ddx_top5": [
+        "Panic attack",
+        "PSVT",
+        "Guillain-Barr\u00e9 syndrome",
+        "Possible NSTEMI / STEMI",
+        "Spontaneous pneumothorax"
+      ],
+      "state_chars": 1824,
+      "flat": {
+        "pred": "Panic attack",
+        "conf": 0.97,
+        "top5": [
+          [
+            "Panic attack",
+            0.98
+          ],
+          [
+            "Possible NSTEMI / STEMI",
+            0.01
+          ],
+          [
+            "Pulmonary embolism",
+            0.01
+          ],
+          [
+            "Pulmonary neoplasm",
+            0
+          ],
+          [
+            "Boerhaave",
+            0
+          ]
+        ],
+        "cost": 0.00028936,
+        "calls": 1
+      }
+    },
+    {
+      "i": 21,
+      "truth": "Pulmonary embolism",
+      "ddx_top5": [
+        "Pulmonary embolism",
+        "Spontaneous pneumothorax",
+        "Ebola",
+        "Myocarditis",
+        "Guillain-Barr\u00e9 syndrome"
+      ],
+      "state_chars": 1237,
+      "flat": {
+        "pred": "Pulmonary embolism",
+        "conf": 0.95,
+        "top5": [
+          [
+            "Pulmonary embolism",
+            0.95
+          ],
+          [
+            "Pneumonia",
+            0.02
+          ],
+          [
+            "Spontaneous pneumothorax",
+            0.01
+          ],
+          [
+            "none_of_these",
+            0.01
+          ],
+          [
+            "Tuberculosis",
+            0.01
+          ]
+        ],
+        "cost": 0.00028460000000000003,
+        "calls": 1
+      }
+    },
+    {
+      "i": 22,
+      "truth": "Spontaneous pneumothorax",
+      "ddx_top5": [
+        "Unstable angina",
+        "Stable angina",
+        "Possible NSTEMI / STEMI",
+        "GERD",
+        "Pericarditis"
+      ],
+      "state_chars": 872,
+      "flat": {
+        "pred": "Unstable angina",
+        "conf": 0.62,
+        "top5": [
+          [
+            "Unstable angina",
+            0.64
+          ],
+          [
+            "Possible NSTEMI / STEMI",
+            0.29
+          ],
+          [
+            "Spontaneous pneumothorax",
+            0.07
+          ],
+          [
+            "Anaphylaxis",
+            0
+          ],
+          [
+            "Myasthenia gravis",
+            0
+          ]
+        ],
+        "cost": 0.00028052000000000003,
+        "calls": 1
+      }
+    },
+    {
+      "i": 23,
+      "truth": "Influenza",
+      "ddx_top5": [
+        "Influenza",
+        "URTI",
+        "HIV (initial infection)",
+        "Bronchitis",
+        "Pneumonia"
+      ],
+      "state_chars": 1606,
+      "flat": {
+        "pred": "Influenza",
+        "conf": 0.58,
+        "top5": [
+          [
+            "Influenza",
+            0.6
+          ],
+          [
+            "URTI",
+            0.21
+          ],
+          [
+            "HIV (initial infection)",
+            0.1
+          ],
+          [
+            "none_of_these",
+            0.04
+          ],
+          [
+            "SLE",
+            0.02
+          ]
+        ],
+        "cost": 0.0002876,
+        "calls": 1
+      }
+    },
+    {
+      "i": 24,
+      "truth": "Panic attack",
+      "ddx_top5": [
+        "Panic attack",
+        "PSVT",
+        "Spontaneous pneumothorax",
+        "Possible NSTEMI / STEMI",
+        "Pericarditis"
+      ],
+      "state_chars": 1372,
+      "flat": {
+        "pred": "Panic attack",
+        "conf": 0.92,
+        "top5": [
+          [
+            "Panic attack",
+            0.93
+          ],
+          [
+            "Atrial fibrillation",
+            0.03
+          ],
+          [
+            "none_of_these",
+            0.02
+          ],
+          [
+            "Possible NSTEMI / STEMI",
+            0.01
+          ],
+          [
+            "Pancreatic neoplasm",
+            0
+          ]
+        ],
+        "cost": 0.00028483999999999996,
+        "calls": 1
+      }
+    },
+    {
+      "i": 25,
+      "truth": "Influenza",
+      "ddx_top5": [
+        "URTI",
+        "Influenza",
+        "Bronchitis",
+        "HIV (initial infection)",
+        "Pneumonia"
+      ],
+      "state_chars": 1493,
+      "flat": {
+        "pred": "Influenza",
+        "conf": 0.25,
+        "top5": [
+          [
+            "Influenza",
+            0.28
+          ],
+          [
+            "Viral pharyngitis",
+            0.27
+          ],
+          [
+            "URTI",
+            0.25
+          ],
+          [
+            "none_of_these",
+            0.11
+          ],
+          [
+            "HIV (initial infection)",
+            0.07
+          ]
+        ],
+        "cost": 0.00028676,
+        "calls": 1
+      }
+    },
+    {
+      "i": 26,
+      "truth": "Acute dystonic reactions",
+      "ddx_top5": [
+        "Acute dystonic reactions"
+      ],
+      "state_chars": 680,
+      "flat": {
+        "pred": "Myasthenia gravis",
+        "conf": 0.6,
+        "top5": [
+          [
+            "Myasthenia gravis",
+            0.62
+          ],
+          [
+            "Larygospasm",
+            0.26
+          ],
+          [
+            "Panic attack",
+            0.09
+          ],
+          [
+            "none_of_these",
+            0.01
+          ],
+          [
+            "Anaphylaxis",
+            0.01
+          ]
+        ],
+        "cost": 0.00027840000000000005,
+        "calls": 1
+      }
+    },
+    {
+      "i": 27,
+      "truth": "Acute otitis media",
+      "ddx_top5": [
+        "Bronchitis",
+        "Acute otitis media",
+        "Pneumonia",
+        "Tuberculosis",
+        "Chagas"
+      ],
+      "state_chars": 863,
+      "flat": {
+        "pred": "Acute otitis media",
+        "conf": 0.98,
+        "top5": [
+          [
+            "Acute otitis media",
+            0.98
+          ],
+          [
+            "Bronchiolitis",
+            0.01
+          ],
+          [
+            "URTI",
+            0.01
+          ],
+          [
+            "Acute rhinosinusitis",
+            0
+          ],
+          [
+            "Viral pharyngitis",
+            0
+          ]
+        ],
+        "cost": 0.00028024,
+        "calls": 1
+      }
+    },
+    {
+      "i": 28,
+      "truth": "Pulmonary embolism",
+      "ddx_top5": [
+        "Pulmonary embolism",
+        "Possible NSTEMI / STEMI",
+        "Acute pulmonary edema",
+        "Panic attack",
+        "Myocarditis"
+      ],
+      "state_chars": 1129,
+      "flat": {
+        "pred": "Pulmonary embolism",
+        "conf": 0.54,
+        "top5": [
+          [
+            "Pulmonary embolism",
+            0.56
+          ],
+          [
+            "Pulmonary neoplasm",
+            0.44
+          ],
+          [
+            "Localized edema",
+            0
+          ],
+          [
+            "Cluster headache",
+            0
+          ],
+          [
+            "SLE",
+            0
+          ]
+        ],
+        "cost": 0.00028348,
+        "calls": 1
+      }
+    },
+    {
+      "i": 29,
+      "truth": "Spontaneous rib fracture",
+      "ddx_top5": [
+        "Spontaneous rib fracture",
+        "Bronchitis",
+        "Whooping cough",
+        "Possible NSTEMI / STEMI",
+        "Pulmonary embolism"
+      ],
+      "state_chars": 1068,
+      "flat": {
+        "pred": "Pulmonary embolism",
+        "conf": 0.74,
+        "top5": [
+          [
+            "Pulmonary embolism",
+            0.76
+          ],
+          [
+            "Spontaneous pneumothorax",
+            0.09
+          ],
+          [
+            "Pulmonary neoplasm",
+            0.08
+          ],
+          [
+            "Spontaneous rib fracture",
+            0.05
+          ],
+          [
+            "Pericarditis",
+            0.01
+          ]
+        ],
+        "cost": 0.00028256,
+        "calls": 1
+      }
+    },
+    {
+      "i": 30,
+      "truth": "Atrial fibrillation",
+      "ddx_top5": [
+        "Atrial fibrillation"
+      ],
+      "state_chars": 801,
+      "flat": {
+        "pred": "Atrial fibrillation",
+        "conf": 0.95,
+        "top5": [
+          [
+            "Atrial fibrillation",
+            0.96
+          ],
+          [
+            "none_of_these",
+            0.04
+          ],
+          [
+            "Inguinal hernia",
+            0
+          ],
+          [
+            "Chagas",
+            0
+          ],
+          [
+            "Influenza",
+            0
+          ]
+        ],
+        "cost": 0.00027984,
+        "calls": 1
+      }
+    }
+  ],
+  "flat_score": {
+    "top1": 15,
+    "top5": 28,
+    "n": 30,
+    "top1_pct": 50.0,
+    "top5_pct": 93.3,
+    "cost_usd": 0.0082
+  }
+}

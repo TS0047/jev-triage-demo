@@ -1,0 +1,253 @@
+{
+  "dataset": "aai530-group6/ddxplus",
+  "n": 12,
+  "results": [
+    {
+      "i": 1,
+      "truth": "GERD",
+      "ddx_top5": [
+        "Bronchitis",
+        "GERD",
+        "Possible NSTEMI / STEMI",
+        "Unstable angina",
+        "Pericarditis"
+      ],
+      "state_chars": 1222,
+      "hier": {
+        "pred": "ESCALATED:no_mechanism_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.000366,
+        "calls": 4,
+        "escalated": true
+      }
+    },
+    {
+      "i": 2,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Bronchospasm / acute asthma exacerbation",
+        "Influenza",
+        "Viral pharyngitis",
+        "Allergic sinusitis",
+        "Pneumonia"
+      ],
+      "state_chars": 922,
+      "hier": {
+        "pred": "mycoplasma",
+        "label": "Mycoplasma pneumonia",
+        "conf": 0.26,
+        "path": "acute_respiratory > infective > mycoplasma",
+        "top5": [],
+        "cost": 0.00045312,
+        "calls": 6
+      }
+    },
+    {
+      "i": 3,
+      "truth": "Acute dystonic reactions",
+      "ddx_top5": [
+        "Acute dystonic reactions",
+        "Myasthenia gravis"
+      ],
+      "state_chars": 935,
+      "hier": {
+        "pred": "ESCALATED:red_flags",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00010952000000000002,
+        "calls": 1,
+        "escalated": true
+      }
+    },
+    {
+      "i": 4,
+      "truth": "Acute laryngitis",
+      "ddx_top5": [
+        "Bronchitis",
+        "Acute laryngitis",
+        "Tuberculosis",
+        "Viral pharyngitis",
+        "Influenza"
+      ],
+      "state_chars": 921,
+      "hier": {
+        "pred": "covid19",
+        "label": "COVID-19",
+        "conf": 0.58,
+        "path": "acute_respiratory > infective > covid19",
+        "top5": [],
+        "cost": 0.00045432000000000003,
+        "calls": 6
+      }
+    },
+    {
+      "i": 5,
+      "truth": "URTI",
+      "ddx_top5": [
+        "URTI",
+        "Influenza",
+        "Bronchitis",
+        "HIV (initial infection)",
+        "Pneumonia"
+      ],
+      "state_chars": 991,
+      "hier": {
+        "pred": "influenza",
+        "label": "Influenza",
+        "conf": 0.57,
+        "path": "acute_respiratory > infective > influenza",
+        "top5": [],
+        "cost": 0.0004576,
+        "calls": 6
+      }
+    },
+    {
+      "i": 6,
+      "truth": "URTI",
+      "ddx_top5": [
+        "Pneumonia",
+        "Bronchitis",
+        "Influenza",
+        "URTI",
+        "HIV (initial infection)"
+      ],
+      "state_chars": 1007,
+      "hier": {
+        "pred": "ESCALATED:no_condition_in_cell_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00045764000000000004,
+        "calls": 6,
+        "escalated": true
+      }
+    },
+    {
+      "i": 7,
+      "truth": "Inguinal hernia",
+      "ddx_top5": [
+        "Inguinal hernia",
+        "Bronchitis",
+        "Anaphylaxis",
+        "Whooping cough",
+        "Scombroid food poisoning"
+      ],
+      "state_chars": 1321,
+      "hier": {
+        "pred": "ESCALATED:no_mechanism_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00037383999999999996,
+        "calls": 4,
+        "escalated": true
+      }
+    },
+    {
+      "i": 8,
+      "truth": "Spontaneous pneumothorax",
+      "ddx_top5": [
+        "Unstable angina",
+        "Spontaneous pneumothorax",
+        "Possible NSTEMI / STEMI",
+        "Pulmonary embolism",
+        "Stable angina"
+      ],
+      "state_chars": 1064,
+      "hier": {
+        "pred": "ESCALATED:red_flags",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00011152000000000002,
+        "calls": 1,
+        "escalated": true
+      }
+    },
+    {
+      "i": 9,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "URTI",
+        "Acute COPD exacerbation / infection",
+        "Bronchitis",
+        "Viral pharyngitis",
+        "Pneumonia"
+      ],
+      "state_chars": 1077,
+      "hier": {
+        "pred": "influenza",
+        "label": "Influenza",
+        "conf": 0.18,
+        "path": "acute_respiratory > infective > influenza",
+        "top5": [],
+        "cost": 0.00046232,
+        "calls": 6
+      }
+    },
+    {
+      "i": 10,
+      "truth": "GERD",
+      "ddx_top5": [
+        "GERD",
+        "Bronchitis",
+        "Pericarditis",
+        "Spontaneous rib fracture",
+        "Unstable angina"
+      ],
+      "state_chars": 1286,
+      "hier": {
+        "pred": "ESCALATED:red_flags",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00011368000000000001,
+        "calls": 1,
+        "escalated": true
+      }
+    },
+    {
+      "i": 11,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Allergic sinusitis",
+        "Bronchitis",
+        "Possible NSTEMI / STEMI",
+        "Panic attack",
+        "Spontaneous pneumothorax"
+      ],
+      "state_chars": 1032,
+      "hier": {
+        "pred": "ESCALATED:no_mechanism_fits",
+        "conf": null,
+        "top5": [],
+        "cost": 0.00035936,
+        "calls": 4,
+        "escalated": true
+      }
+    },
+    {
+      "i": 12,
+      "truth": "Bronchitis",
+      "ddx_top5": [
+        "Acute COPD exacerbation / infection",
+        "URTI",
+        "Viral pharyngitis",
+        "Spontaneous pneumothorax",
+        "GERD"
+      ],
+      "state_chars": 1057,
+      "hier": {
+        "pred": "covid19",
+        "label": "COVID-19",
+        "conf": 0.36,
+        "path": "acute_respiratory > infective > covid19",
+        "top5": [],
+        "cost": 0.00046056,
+        "calls": 6
+      }
+    }
+  ],
+  "hier_score": {
+    "escalated": 7,
+    "n": 12,
+    "cost_usd": 0.00418
+  }
+}
