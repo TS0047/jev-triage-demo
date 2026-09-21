@@ -43,6 +43,8 @@ research work on `main` never touches the live site.
     DATASET_SCALE.md      is a bigger dataset the answer? (measured: no)
     REALCASES.md          evaluation on REAL published cases: 94% refusal
     BOTTLENECK.md         too few diseases, or too little data? (measured)
+    HYPOTHESIS_SPACE.md   nothing is trained: why the option list IS the model
+    hypothesis_space.py   list-as-sample-space + names-only list expansion
     coverage_curve.py     how many conditions to cover X% of real cases
     shape_of_problem.py   the Zipf treadmill behind list growth
     eval_realcases.py     harness for MedCaseReasoning (real PMC case reports)
@@ -255,6 +257,11 @@ diagnostic accuracy.
 
 ## Known limits
 
+- **Nothing is trained.** Jev is frozen behind an API; the option list is the
+  sample space, so an absent condition has no probability rather than a low
+  one. Growing the list costs only the names: a 200-name list built from
+  corpus frequency with zero authored likelihoods scored 6/14 on real cases
+  where the 49-condition list scored 0/14 (HYPOTHESIS_SPACE.md).
 - Evaluated on 85 real published case reports (REALCASES.md): 94% of
   out-of-scope diseases correctly escalated, and 3 of the 5 apparent
   confabulations were the scorer being stricter than medicine. Narrow but

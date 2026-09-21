@@ -95,11 +95,21 @@ mechanisms x ~30 conditions = ~2,880 addressable with no level over 30.
 
 Every fixed gain costs exponentially more conditions.
 
-**3. Each added condition needs likelihoods, and wrong ones are worse than
-none.** From `noise_sensitivity.py`: flipping the *direction* of 5% of cells
-drops accuracy 99.3% -> 46.5%. Hand-authoring 2,000 diseases means ~450,000
-cells authored without data. At even a 5% direction-error rate that is a
-system worse than the 49-condition one.
+**3. ~~Each added condition needs likelihoods~~ - CORRECTED, see below.**
+
+> **Correction.** This claim was wrong as originally written, and
+> `hypothesis_space.py` disproves it. Adding a condition to the *classifier*
+> costs nothing but the name - measured 0/14 -> 6/14 on real cases using a
+> list of 200 names harvested from corpus frequency with **zero** authored
+> likelihoods. The 450,000-cell figure applies only to the adaptive QUESTION
+> loop (`triage_loop.py`), which needs P(finding|disease) to compute expected
+> information gain. Classification and question-selection have different
+> data requirements, and conflating them overstated the cost of growth.
+
+The likelihood-authoring risk is real but narrower than stated: from
+`noise_sensitivity.py`, flipping the *direction* of 5% of cells drops accuracy
+99.3% -> 46.5%. That is a reason to be careful about hand-authoring the
+question-selection matrix - not a reason to keep the diagnosis list at 49.
 
 And the data to do it properly does not exist: **74% of real diagnoses appear
 exactly once.** You cannot estimate P(finding | disease) from a single case, at
