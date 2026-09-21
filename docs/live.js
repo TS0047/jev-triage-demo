@@ -157,7 +157,7 @@ async function startConsult() {
     key, state, remaining: [...BANK.findings], asked: [], round: 0,
     usage: { calls: 0, cost: 0, in: 0, out: 0 }, stop: null
   };
-  if (key !== DEMO_KEY) sessionStorage.setItem("ojk", key);
+  try { if (key !== DEMO_KEY) sessionStorage.setItem("ojk", key); } catch (e) { /* non-fatal */ }
 
   $("#lv-intake").style.display = "none";
   $("#lv-run").style.display = "block";
@@ -314,8 +314,13 @@ async function initLive() {
     $("#lv-intake").innerHTML = '<div class="err">Could not load the findings bank.</div>';
     return;
   }
-  const saved = sessionStorage.getItem("ojk");
-  if (saved) $("#lv-key").value = saved;
+  let saved = null;
+  try { saved = sessionStorage.getItem("ojk"); } catch (e) { /* storage blocked */ }
+  if (saved) {
+    $("#lv-key").value = saved;
+    const adv = document.querySelector(".advanced");
+    if (adv) adv.open = true;   // don't hide a key that is actually in use
+  }
 
   $("#lv-start").onclick = startConsult;
   $("#lv-yes").onclick = () => answer("yes");

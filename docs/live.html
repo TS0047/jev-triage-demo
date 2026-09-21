@@ -72,8 +72,16 @@ textarea{min-height:120px;resize:vertical;line-height:1.6}
   color:var(--mut);padding:7px 12px;border-radius:999px;cursor:pointer;transition:.16s}
 .sym-chip:hover{border-color:var(--acc);color:var(--ink)}
 .sym-chip.used{opacity:.4}
-.keyrow{display:flex;gap:10px;align-items:flex-start}
-.keyrow input{font-family:var(--mono);font-size:13px}
+.advanced{margin:2px 0 8px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel);overflow:hidden}
+.advanced summary{cursor:pointer;padding:14px 20px;font:500 12px var(--mono);
+  letter-spacing:.08em;color:var(--dim);list-style:none;transition:.18s;user-select:none}
+.advanced summary::-webkit-details-marker{display:none}
+.advanced summary::before{content:'+ ';color:var(--acc)}
+.advanced[open] summary::before{content:'– '}
+.advanced summary:hover{color:var(--mut)}
+.adv-body{padding:0 20px 18px}
+.adv-body input{font-family:var(--mono);font-size:13px}
 /* run view */
 .chip{font:500 11px/1 var(--mono);color:var(--mut);background:var(--panel-2);
   border:1px solid var(--line);padding:7px 10px;border-radius:6px}
@@ -171,15 +179,16 @@ footer a{color:var(--mut)}
 <div id="lv-body" style="display:none">
 
   <div id="lv-intake" style="display:flex;flex-direction:column">
-    <div class="panel card sec" style="order:2">
-      <h3>API key <span style="color:var(--ok);font-size:11px">— not needed, a demo key is built in</span></h3>
-      <div class="keyrow"><input id="lv-key" type="password" placeholder="Optional — leave blank to use the demo key" autocomplete="off" spellcheck="false"></div>
-      <p class="hint">This demo ships with a shared key, so you can just start. Enter your own
-      only if you'd rather not use it — yours stays in this tab, is sent nowhere except
-      <span style="font-family:var(--mono)">api.openjev.sh</span>, and is never stored by this site.
-      Free keys at <a href="https://openjev.sh" target="_blank" rel="noopener">openjev.sh</a>.
-      A consultation costs about $0.001.</p>
-    </div>
+    <details class="advanced" style="order:2">
+      <summary>Advanced — use your own API key</summary>
+      <div class="adv-body">
+        <input id="lv-key" type="password" placeholder="Optional OpenJEV key" autocomplete="off" spellcheck="false">
+        <p class="hint">This demo runs on a built-in key, so you don't need one. Enter your own
+        only if you'd prefer — it stays in this tab, goes nowhere except
+        <span style="font-family:var(--mono)">api.openjev.sh</span>, and is never stored by this site.
+        Free keys at <a href="https://openjev.sh" target="_blank" rel="noopener">openjev.sh</a>.</p>
+      </div>
+    </details>
 
     <div class="panel card sec" style="order:1">
       <h3>The patient</h3>
