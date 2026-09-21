@@ -6,3 +6,5 @@ __pycache__/
 datasets/
 learned_bank*.json
 .venv/
+datasets/
+mcr_*.json

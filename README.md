@@ -41,6 +41,8 @@ research work on `main` never touches the live site.
     DATASETS.md           public datasets + measured accuracy against DDXPlus
     MATRIX.md             how likelihoods are set, and how to learn them properly
     DATASET_SCALE.md      is a bigger dataset the answer? (measured: no)
+    REALCASES.md          evaluation on REAL published cases: 94% refusal
+    eval_realcases.py     harness for MedCaseReasoning (real PMC case reports)
     learning_curve.py     accuracy vs training-set size; saturates at n=2,500
     dataset_structure.py  DDXPlus's 99.44% lookup ceiling
     learn_likelihoods_v2.py  applicability-aware MLE over 134k DDXPlus patients
@@ -250,6 +252,10 @@ diagnostic accuracy.
 
 ## Known limits
 
+- Evaluated on 85 real published case reports (REALCASES.md): 94% of
+  out-of-scope diseases correctly escalated, and 3 of the 5 apparent
+  confabulations were the scorer being stricter than medicine. Narrow but
+  honest - it declines rather than guessing.
 - DDXPlus is synthetic and near-deterministic: memorising every evidence set
   scores 99.44%, and only 3.09% of patients sit in an ambiguous set. High
   accuracy there measures generator inversion, not clinical reasoning
