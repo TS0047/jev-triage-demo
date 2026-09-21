@@ -42,6 +42,9 @@ research work on `main` never touches the live site.
     MATRIX.md             how likelihoods are set, and how to learn them properly
     DATASET_SCALE.md      is a bigger dataset the answer? (measured: no)
     REALCASES.md          evaluation on REAL published cases: 94% refusal
+    BOTTLENECK.md         too few diseases, or too little data? (measured)
+    coverage_curve.py     how many conditions to cover X% of real cases
+    shape_of_problem.py   the Zipf treadmill behind list growth
     eval_realcases.py     harness for MedCaseReasoning (real PMC case reports)
     learning_curve.py     accuracy vs training-set size; saturates at n=2,500
     dataset_structure.py  DDXPlus's 99.44% lookup ceiling
