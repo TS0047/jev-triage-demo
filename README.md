@@ -45,6 +45,9 @@ research work on `main` never touches the live site.
     BOTTLENECK.md         too few diseases, or too little data? (measured)
     HYPOTHESIS_SPACE.md   nothing is trained: why the option list IS the model
     WIDE_TREE.md          2,505 conditions in 2 calls; wide beats deep
+    ESCALATION_AUDIT.md   were the refusals honest? (only 3/11 were)
+    audit_escalations.py  classifies every escalation: absent vs misrouted
+    wide_router_topk.py   top-K descent (measured WORSE - negative result)
     build_taxonomy.py     harvests a 24 x 250 taxonomy from real corpus data
     wide_router.py        two-level router, escape hatch at both levels
     eval_wide.py          flat vs wide vs deep on real cases

@@ -77,6 +77,11 @@ wrong answer. So the tree escalates when:
     level 2 returns none_of_these         category right, condition absent
     level 2 confidence < 0.25             condition uncertain
 
+**Audited afterwards - see ESCALATION_AUDIT.md. Only 3 of 11 escalations were
+honest (condition genuinely absent); 7 were level-1 misroutes and 1 was the
+model refusing an answer that was in the list. The refusal behaviour is
+therefore weaker than this section originally implied.**
+
 In the 22-case run the tree escalated 10 times and confabulated twice
 (Gossypiboma called appendicitis; malignant syphilis escalated on an uncertain
 category). Refusal behaviour survived a 51x list expansion, which was the open
