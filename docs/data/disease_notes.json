@@ -1,0 +1,50 @@
+{
+  "dengue": {
+    "label": "Dengue fever",
+    "vector": "Aedes mosquito — bites in daylight",
+    "incubation": "4–10 days",
+    "blurb": "A flavivirus spread by day-biting Aedes mosquitoes in urban and peri-urban areas. Classically presents with abrupt high fever, pain behind the eyes and severe body aches. Most cases resolve, but a minority deteriorate around the time the fever settles, when plasma leaks from the circulation and the platelet count falls.",
+    "watch": "Warning signs cluster on days 4–6, often as the fever drops: abdominal pain, persistent vomiting, bleeding, restlessness, a rising haematocrit with a falling platelet count.",
+    "confirm": "NS1 antigen in the first 5 days; IgM from about day 5. Serial platelets and haematocrit for severity, not diagnosis."
+  },
+  "malaria": {
+    "label": "Malaria",
+    "vector": "Anopheles mosquito — bites at night",
+    "incubation": "7–30 days (longer for P. vivax)",
+    "blurb": "A plasmodium parasite delivered by night-biting Anopheles mosquitoes. The hallmark is paroxysmal fever with shaking chills and drenching sweats, often settling into a rhythm every second day in vivax. Haemolysis produces anaemia and jaundice, and the spleen enlarges.",
+    "watch": "Falciparum can progress to cerebral malaria, kidney failure or severe anaemia within hours. Confusion, dark urine or breathlessness in a malaria-endemic traveller is an emergency.",
+    "confirm": "Peripheral smear (thick and thin) or a rapid antigen test. A single negative smear does not exclude it — repeat during a fever spike."
+  },
+  "typhoid": {
+    "label": "Enteric fever (typhoid)",
+    "vector": "Contaminated food and water",
+    "incubation": "6–30 days",
+    "blurb": "Salmonella Typhi acquired by swallowing contaminated food or water. Unlike the mosquito-borne fevers it builds gradually — a step-ladder fever climbing a little higher each day over the first week, with abdominal distension, constipation more often than diarrhoea, and a relative slowing of the pulse.",
+    "watch": "Intestinal perforation and haemorrhage occur in the third week. Sudden severe abdominal pain in a patient two weeks into an untreated fever is a surgical emergency.",
+    "confirm": "Blood culture is the standard, highest-yield in week one. The Widal test is unreliable and is not a substitute."
+  },
+  "leptospirosis": {
+    "label": "Leptospirosis",
+    "vector": "Flood water, mud, animal urine",
+    "incubation": "2–30 days (usually 5–14)",
+    "blurb": "A spirochaete shed in animal urine that enters through skin abrasions or mucous membranes, so it follows flooding, paddy fieldwork and recreational water contact. Its signature is severe calf muscle tenderness with red, bloodshot eyes that itch and discharge — conjunctival suffusion.",
+    "watch": "Weil's disease is the severe form: jaundice, kidney failure and pulmonary haemorrhage. Breathlessness or coughing blood signals a rapidly fatal course.",
+    "confirm": "IgM ELISA or MAT; PCR in the first week. Treat on clinical suspicion after a water-contact exposure rather than waiting."
+  },
+  "scrub_typhus": {
+    "label": "Scrub typhus",
+    "vector": "Chigger mite — in scrub and tall grass",
+    "incubation": "6–21 days",
+    "blurb": "Orientia tsutsugamushi, transmitted by larval mites living in scrub vegetation and grassland, which is why fieldwork and sitting in long grass matter so much in the history. It leaves a painless black scab at the bite site — an eschar — with tender enlarged glands draining it.",
+    "watch": "Untreated it progresses to pneumonitis, meningoencephalitis and multi-organ failure. It responds dramatically to doxycycline, so recognising it changes the outcome.",
+    "confirm": "IgM ELISA or PCR. The eschar is the single most useful finding and is routinely missed — it hides in the groin, axilla and waistline."
+  },
+  "influenza": {
+    "label": "Influenza",
+    "vector": "Person-to-person, airborne droplets",
+    "incubation": "1–4 days",
+    "blurb": "A respiratory virus spread between people, which is why ill contacts at home or work carry weight. It is in this differential as the common alternative that must be excluded: fever with prominent cough, sore throat and a blocked or runny nose, which the mosquito-borne and water-borne illnesses do not typically produce.",
+    "watch": "Secondary bacterial pneumonia, and decompensation in pregnancy, chronic lung disease or the elderly.",
+    "confirm": "Rapid antigen or PCR on a nasal swab, mainly when antivirals or infection control depend on the answer."
+  }
+}

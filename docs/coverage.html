@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coverage — what this demo can identify</title>
+<meta name="description" content="The six illnesses in the differential, the findings that discriminate them, and an honest account of what falls outside.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080b12;--panel:#0e1320;--panel-2:#141b2c;--line:#1e2942;
+  --ink:#e8edf7;--mut:#8798b8;--dim:#5d6c88;
+  --acc:#4aa8ff;--acc-2:#7c5cff;--ok:#2ed3a7;--warn:#ffb74a;--bad:#ff5c72;
+  --r:14px;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+  font:400 15px/1.6 Inter,system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(760px 520px at 12% -8%,rgba(74,168,255,.16),transparent 60%),
+             radial-gradient(680px 460px at 92% 4%,rgba(124,92,255,.13),transparent 62%),
+             radial-gradient(900px 700px at 50% 108%,rgba(46,211,167,.07),transparent 65%)}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
+nav{display:flex;gap:8px;padding:26px 0 0;flex-wrap:wrap}
+nav a{color:var(--mut);text-decoration:none;font:500 13px Inter,sans-serif;
+  padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);transition:.18s}
+nav a:hover{color:var(--ink);border-color:var(--acc)}
+nav a.on{background:rgba(74,168,255,.12);border-color:var(--acc);color:var(--ink)}
+header{padding:34px 0 30px}
+.badge{display:inline-flex;align-items:center;gap:8px;font:500 11px/1 var(--mono);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--acc);
+  background:rgba(74,168,255,.09);border:1px solid rgba(74,168,255,.26);
+  padding:7px 13px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(32px,5vw,50px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
+h1 .g{background:linear-gradient(105deg,var(--acc),var(--acc-2) 58%,var(--ok));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);font-size:16.5px;max-width:660px;margin-top:16px}
+.panel{background:linear-gradient(180deg,var(--panel),#0b0f19);
+  border:1px solid var(--line);border-radius:var(--r)}
+.sec{margin:46px 0}
+.sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+.sec-h h2{font-size:21px;letter-spacing:-.015em;font-weight:600}
+.sec-h .note{color:var(--dim);font:400 13px/1.5 var(--mono)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:30px}
+.stat{padding:18px 20px}
+.stat .k{font:500 10px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
+.stat .v{font:700 27px/1.15 var(--mono);margin-top:9px;letter-spacing:-.02em}
+.stat .d{font-size:12px;color:var(--mut);margin-top:5px}
+/* disease cards */
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.dcard{padding:24px;position:relative;overflow:hidden;transition:.2s}
+.dcard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--acc),var(--acc-2),transparent)}
+.dcard:hover{border-color:rgba(74,168,255,.45);transform:translateY(-2px)}
+.dtop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+.dname{font:700 19px/1.2 Inter,sans-serif;letter-spacing:-.01em}
+.dkey{font:500 10px var(--mono);color:var(--dim);letter-spacing:.06em;margin-top:4px}
+.dmeta{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+.mtag{font:500 10.5px var(--mono);padding:5px 9px;border-radius:6px;
+  background:var(--panel-2);border:1px solid var(--line);color:var(--mut)}
+.mtag b{color:var(--ink);font-weight:500}
+.dblurb{font-size:13.5px;color:var(--mut);line-height:1.62;margin-bottom:14px}
+.dsub{font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);margin:14px 0 8px}
+.dwatch{font-size:12.8px;line-height:1.58;color:#ffcf9a;background:rgba(255,183,74,.06);
+  border-left:2px solid var(--warn);padding:10px 12px;border-radius:0 8px 8px 0}
+.dconfirm{font-size:12.8px;line-height:1.58;color:var(--mut);background:rgba(46,211,167,.05);
+  border-left:2px solid var(--ok);padding:10px 12px;border-radius:0 8px 8px 0}
+.dfind{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.frow{display:grid;grid-template-columns:1fr 78px 40px;align-items:center;gap:9px;
+  font:500 11px var(--mono);margin-bottom:6px}
+.frow .fn{color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ftrack{display:block;height:5px;background:#121a2b;border-radius:99px;overflow:hidden}
+.ffill{display:block;height:100%;border-radius:99px;width:0;
+  background:linear-gradient(90deg,var(--ok),var(--acc));transition:width .8s cubic-bezier(.22,1,.36,1)}
+.frow .fv{text-align:right;color:var(--dim)}
+/* matrix */
+.mwrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:700px;background:var(--panel)}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);
+  font:500 11.5px var(--mono);white-space:nowrap}
+th{color:var(--dim);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  position:sticky;top:0;background:#0c111c;z-index:1}
+td:first-child{color:var(--mut);white-space:normal;min-width:190px;
+  font:400 12px Inter,sans-serif}
+tr:hover td{background:rgba(74,168,255,.04)}
+.cell-v{display:inline-block;min-width:34px;text-align:center;padding:3px 6px;border-radius:5px;font-size:10.5px}
+.s3{background:rgba(46,211,167,.22);color:#7ff0cf}
+.s2{background:rgba(46,211,167,.13);color:var(--ok)}
+.s1{background:rgba(74,168,255,.1);color:var(--acc)}
+.s0{color:#2b3550}
+/* outside */
+.out{border:1px solid rgba(255,183,74,.3);background:rgba(255,183,74,.05);
+  border-radius:var(--r);padding:24px}
+.out h3{color:var(--warn);font:600 12px var(--mono);letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:12px}
+.out p{font-size:13.5px;color:var(--mut);line-height:1.65;margin-bottom:10px}
+.out b{color:var(--ink)}
+.exgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-top:14px}
+.ex{padding:11px 13px;border-radius:9px;background:rgba(255,92,114,.06);
+  border:1px solid rgba(255,92,114,.2);font-size:12.5px;color:#ffc2cb}
+.ex b{display:block;color:#fff;font-size:11px;font-family:var(--mono);margin-bottom:3px}
+footer{padding:38px 0 58px;border-top:1px solid var(--line);margin-top:46px;
+  color:var(--dim);font-size:12.5px}
+footer a{color:var(--mut)}
+.err{padding:26px;text-align:center;color:var(--bad);font:500 14px var(--mono)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav>
+  <a href="./">Case studies</a>
+  <a href="live.html">Live consultation</a>
+  <a href="coverage.html" class="on">Coverage</a>
+</nav>
+
+<header>
+  <div class="badge">What it can and cannot identify</div>
+  <h1>Six illnesses.<br><span class="g">Everything else escalates.</span></h1>
+  <p class="sub">The differential is deliberately narrow: undifferentiated fever after
+  travel in tropical South Asia. What matters is not the list's length but that the
+  model can say <em>none of these</em> — which is what makes a narrow list safe.</p>
+
+  <div class="stats">
+    <div class="panel stat"><div class="k">Illnesses</div><div class="v" id="s-d">—</div><div class="d">in the differential</div></div>
+    <div class="panel stat"><div class="k">Findings</div><div class="v" id="s-f">—</div><div class="d">discriminating questions</div></div>
+    <div class="panel stat"><div class="k">Escape hatch</div><div class="v" style="color:var(--warn)">other</div><div class="d">always available</div></div>
+    <div class="panel stat"><div class="k">Escalates at</div><div class="v" style="color:var(--warn)">0.60</div><div class="d">P(outside differential)</div></div>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="sec-h"><h2>The differential</h2>
+    <span class="note">bars show how strongly a finding favours that illness</span></div>
+  <div class="dgrid" id="dgrid"></div>
+</section>
+
+<section class="sec">
+  <div class="sec-h"><h2>Discrimination matrix</h2>
+    <span class="note">P(finding present | illness) — hand-authored estimates</span></div>
+  <div class="mwrap" id="matrix"></div>
+  <p style="color:var(--dim);font-size:12.5px;margin-top:12px;line-height:1.6">
+    Read a row across: values that differ sharply between columns make that question
+    worth asking. A row of similar values is a question the model will rank last,
+    because it separates nothing.</p>
+</section>
+
+<section class="sec">
+  <div class="out">
+    <h3>What falls outside — and what happens then</h3>
+    <p>Any fever that is not one of the six above is <b>outside this demo's world</b>. The
+    model is asked every round whether the presentation lies outside the differential; at
+    0.60 or above the consultation stops and escalates instead of forcing an answer.</p>
+    <p>This was tested directly. A lupus presentation — malar rash, photosensitivity, oral
+    ulcers, symmetric arthritis, proteinuria with red cell casts, every tropical serology
+    negative — was given to a closed version with no escape hatch. It answered
+    <b>"dengue" at 0.42</b> after three wasted rounds. With <span style="font-family:var(--mono)">other</span>
+    available, the same input returned <b>"other" at 1.00</b> and escalated on round one.</p>
+    <p>That is why widening the list is the second fix, not the first. Any bank is finite;
+    patient N+1 always walks in with something you did not list. The escape hatch is what
+    makes the system safe <em>at any bank size</em>.</p>
+    <div class="exgrid">
+      <div class="ex"><b>AUTOIMMUNE</b>Lupus, adult Still's disease, vasculitis</div>
+      <div class="ex"><b>RESPIRATORY</b>COVID-19, tuberculosis, pneumonia</div>
+      <div class="ex"><b>ARBOVIRAL</b>Chikungunya, Zika, West Nile</div>
+      <div class="ex"><b>BACTERIAL</b>UTI, pyelonephritis, abscess, endocarditis</div>
+      <div class="ex"><b>HEPATIC</b>Hepatitis A and E, amoebic liver abscess</div>
+      <div class="ex"><b>HAEMATOLOGICAL</b>Leukaemia, lymphoma presenting as fever</div>
+      <div class="ex"><b>SURGICAL</b>Appendicitis, cholecystitis, perforation</div>
+      <div class="ex"><b>ANY NON-FEBRILE</b>Everything else entirely</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="panel" style="padding:24px">
+    <div class="sec-h" style="margin-bottom:14px"><h2 style="font-size:17px">On these numbers</h2></div>
+    <p style="color:var(--mut);font-size:13.5px;line-height:1.68">
+      The likelihoods here are <b style="color:var(--ink)">hand-authored plausible estimates,
+      not epidemiological data</b>. They are adequate for ranking which question to ask next,
+      which is all the loop uses them for. They are not adequate as a reported posterior, and
+      the Bayes update additionally assumes findings are conditionally independent — which is
+      false in reality, since rash and petechiae, or jaundice and dark urine, travel together.
+      Real deployment needs sourced priors and a correlation-aware update.</p>
+    <p style="color:var(--mut);font-size:13.5px;line-height:1.68;margin-top:10px">
+      In every case tested, including those the model scored at 100% confidence, it rated
+      <span style="font-family:var(--mono);color:var(--ink)">safe_to_act_without_clinician</span>
+      at 0.03–0.04. The system is built to hand off, never to conclude.</p>
+  </div>
+</section>
+
+<footer>
+  Decision layer <a href="https://openjev.sh" target="_blank" rel="noopener">OpenJEV</a> ·
+  <a href="https://github.com/TS0047/jev-triage-demo" target="_blank" rel="noopener">source</a><br>
+  Not a medical device. No advice. Research demo of calibrated decision models.
+</footer>
+
+</div>
+
+<script>
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+async function boot(){
+  let bank, notes;
+  try {
+    [bank, notes] = await Promise.all([
+      fetch("data/findings_bank.json",{cache:"no-store"}).then(r=>r.json()),
+      fetch("data/disease_notes.json",{cache:"no-store"}).then(r=>r.json())
+    ]);
+  } catch(e){
+    document.getElementById("dgrid").innerHTML = '<div class="panel err">Could not load coverage data.</div>';
+    return;
+  }
+
+  document.getElementById("s-d").textContent = bank.diseases.length;
+  document.getElementById("s-f").textContent = bank.findings.length;
+
+  // disease cards
+  document.getElementById("dgrid").innerHTML = bank.diseases.map(d => {
+    const n = notes[d] || {};
+    const sup = bank.findings
+      .filter(f => f.supports && d in f.supports)
+      .map(f => ({ id: f.id, v: f.supports[d] }))
+      .sort((a,b) => b.v - a.v);
+    const mx = sup.length ? sup[0].v : 1;
+    return `<div class="panel dcard">
+      <div class="dtop"><div>
+        <div class="dname">${esc(n.label || d)}</div>
+        <div class="dkey">${esc(d)}</div>
+      </div></div>
+      <div class="dmeta">
+        ${n.vector ? `<span class="mtag">spread by <b>${esc(n.vector)}</b></span>` : ""}
+        ${n.incubation ? `<span class="mtag">incubation <b>${esc(n.incubation)}</b></span>` : ""}
+      </div>
+      <p class="dblurb">${esc(n.blurb || "")}</p>
+      ${n.watch ? `<div class="dsub">Deterioration to watch for</div><div class="dwatch">${esc(n.watch)}</div>` : ""}
+      ${n.confirm ? `<div class="dsub">How it is confirmed</div><div class="dconfirm">${esc(n.confirm)}</div>` : ""}
+      <div class="dfind"><div class="dsub" style="margin-top:0">Findings that point here</div>
+        ${sup.map(s => `<div class="frow"><span class="fn">${esc(s.id)}</span>
+          <span class="ftrack"><span class="ffill" data-w="${s.v/mx*100}"></span></span>
+          <span class="fv">${s.v.toFixed(2)}</span></div>`).join("")}
+      </div></div>`;
+  }).join("");
+
+  // matrix
+  const cls = v => v >= .55 ? "s3" : v >= .3 ? "s2" : v >= .12 ? "s1" : "s0";
+  document.getElementById("matrix").innerHTML = `<table>
+    <thead><tr><th>Finding</th>${bank.diseases.map(d=>`<th>${esc(d.replace(/_/g," "))}</th>`).join("")}</tr></thead>
+    <tbody>${bank.findings.map(f => `<tr><td>${esc(f.probe)}</td>${
+      bank.diseases.map(d => {
+        const v = (f.supports && d in f.supports) ? f.supports[d]
+                : (f.against && d in f.against) ? f.against[d] : 0.15;
+        return `<td><span class="cell-v ${cls(v)}">${v.toFixed(2)}</span></td>`;
+      }).join("")}</tr>`).join("")}</tbody></table>`;
+
+  requestAnimationFrame(()=>{
+    document.querySelectorAll(".ffill").forEach(el => el.style.width = el.dataset.w + "%");
+  });
+}
+boot();
+</script>
+</body>
+</html>
