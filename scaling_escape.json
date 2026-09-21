@@ -1,0 +1,194 @@
+[
+  {
+    "n": 7,
+    "keep_lupus": false,
+    "choice": "other",
+    "conf": 1,
+    "p_other": 1,
+    "p_sle": 0.0,
+    "outside_noul": 0.27,
+    "top3": [
+      [
+        "other",
+        1
+      ],
+      [
+        "malaria",
+        0
+      ],
+      [
+        "influenza",
+        0
+      ]
+    ],
+    "escalates": true
+  },
+  {
+    "n": 25,
+    "keep_lupus": false,
+    "choice": "other",
+    "conf": 1,
+    "p_other": 1,
+    "p_sle": 0.0,
+    "outside_noul": 0.3,
+    "top3": [
+      [
+        "other",
+        1
+      ],
+      [
+        "malaria",
+        0
+      ],
+      [
+        "influenza",
+        0
+      ]
+    ],
+    "escalates": true
+  },
+  {
+    "n": 100,
+    "keep_lupus": false,
+    "choice": "other",
+    "conf": 0.99,
+    "p_other": 1,
+    "p_sle": 0.0,
+    "outside_noul": 0.26,
+    "top3": [
+      [
+        "other",
+        1
+      ],
+      [
+        "ehrlichiosis",
+        0
+      ],
+      [
+        "hypertension",
+        0
+      ]
+    ],
+    "escalates": true
+  },
+  {
+    "n": 255,
+    "keep_lupus": false,
+    "choice": "other",
+    "conf": 0.86,
+    "p_other": 0.87,
+    "p_sle": 0.0,
+    "outside_noul": 0.25,
+    "top3": [
+      [
+        "other",
+        0.87
+      ],
+      [
+        "other_condition_0001",
+        0.11
+      ],
+      [
+        "parvovirus_b19",
+        0.02
+      ]
+    ],
+    "escalates": true
+  },
+  {
+    "n": 8,
+    "keep_lupus": true,
+    "choice": "sle_flare",
+    "conf": 1,
+    "p_other": 0,
+    "p_sle": 1,
+    "outside_noul": 0.28,
+    "top3": [
+      [
+        "sle_flare",
+        1
+      ],
+      [
+        "influenza",
+        0
+      ],
+      [
+        "malaria",
+        0
+      ]
+    ],
+    "escalates": false
+  },
+  {
+    "n": 26,
+    "keep_lupus": true,
+    "choice": "sle_flare",
+    "conf": 1,
+    "p_other": 0,
+    "p_sle": 1,
+    "outside_noul": 0.26,
+    "top3": [
+      [
+        "sle_flare",
+        1
+      ],
+      [
+        "typhoid",
+        0
+      ],
+      [
+        "influenza",
+        0
+      ]
+    ],
+    "escalates": false
+  },
+  {
+    "n": 101,
+    "keep_lupus": true,
+    "choice": "sle_flare",
+    "conf": 1,
+    "p_other": 0,
+    "p_sle": 1,
+    "outside_noul": 0.28,
+    "top3": [
+      [
+        "sle_flare",
+        1
+      ],
+      [
+        "amoebic_liver_abscess",
+        0
+      ],
+      [
+        "copd_stable",
+        0
+      ]
+    ],
+    "escalates": false
+  },
+  {
+    "n": 255,
+    "keep_lupus": true,
+    "choice": "sle_flare",
+    "conf": 1,
+    "p_other": 0,
+    "p_sle": 1,
+    "outside_noul": 0.27,
+    "top3": [
+      [
+        "sle_flare",
+        1
+      ],
+      [
+        "osteoporosis",
+        0
+      ],
+      [
+        "other_condition_0055",
+        0
+      ]
+    ],
+    "escalates": false
+  }
+]

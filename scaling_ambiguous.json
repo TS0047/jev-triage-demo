@@ -1,0 +1,254 @@
+[
+  {
+    "n": 7,
+    "regime": "hard",
+    "choice": "dengue",
+    "conf": 0.65,
+    "base_mass": 0.97,
+    "leak": 2.7755575615628914e-17,
+    "p_other": 0.03,
+    "entropy": 1.495222702631997,
+    "base_order": [
+      "dengue",
+      "scrub_typhus",
+      "leptospirosis",
+      "typhoid",
+      "malaria",
+      "influenza"
+    ],
+    "top5": [
+      [
+        "dengue",
+        0.7
+      ],
+      [
+        "scrub_typhus",
+        0.09
+      ],
+      [
+        "leptospirosis",
+        0.09
+      ],
+      [
+        "typhoid",
+        0.08
+      ],
+      [
+        "other",
+        0.03
+      ]
+    ],
+    "in_tok": 722,
+    "secs": 0.9
+  },
+  {
+    "n": 25,
+    "regime": "hard",
+    "choice": "dengue",
+    "conf": 0.73,
+    "base_mass": 0.98,
+    "leak": 0.010000000000000018,
+    "p_other": 0.01,
+    "entropy": 1.3353363271857042,
+    "base_order": [
+      "dengue",
+      "scrub_typhus",
+      "typhoid",
+      "leptospirosis",
+      "malaria",
+      "influenza"
+    ],
+    "top5": [
+      [
+        "dengue",
+        0.75
+      ],
+      [
+        "scrub_typhus",
+        0.09
+      ],
+      [
+        "typhoid",
+        0.07
+      ],
+      [
+        "leptospirosis",
+        0.06
+      ],
+      [
+        "malaria",
+        0.01
+      ]
+    ],
+    "in_tok": 1066,
+    "secs": 0.8
+  },
+  {
+    "n": 50,
+    "regime": "hard",
+    "choice": "dengue",
+    "conf": 0.74,
+    "base_mass": 1.0,
+    "leak": 0.0,
+    "p_other": 0,
+    "entropy": 1.2400920992654096,
+    "base_order": [
+      "dengue",
+      "scrub_typhus",
+      "leptospirosis",
+      "typhoid",
+      "malaria",
+      "influenza"
+    ],
+    "top5": [
+      [
+        "dengue",
+        0.75
+      ],
+      [
+        "scrub_typhus",
+        0.11
+      ],
+      [
+        "leptospirosis",
+        0.07
+      ],
+      [
+        "typhoid",
+        0.06
+      ],
+      [
+        "malaria",
+        0.01
+      ]
+    ],
+    "in_tok": 1558,
+    "secs": 0.9
+  },
+  {
+    "n": 100,
+    "regime": "hard",
+    "choice": "dengue",
+    "conf": 0.63,
+    "base_mass": 0.9800000000000001,
+    "leak": 0.019999999999999907,
+    "p_other": 0,
+    "entropy": 1.5742136322270455,
+    "base_order": [
+      "dengue",
+      "scrub_typhus",
+      "typhoid",
+      "leptospirosis",
+      "malaria",
+      "influenza"
+    ],
+    "top5": [
+      [
+        "dengue",
+        0.65
+      ],
+      [
+        "scrub_typhus",
+        0.14
+      ],
+      [
+        "typhoid",
+        0.11
+      ],
+      [
+        "leptospirosis",
+        0.06
+      ],
+      [
+        "malaria",
+        0.02
+      ]
+    ],
+    "in_tok": 2576,
+    "secs": 1.2
+  },
+  {
+    "n": 200,
+    "regime": "mixed",
+    "choice": "dengue",
+    "conf": 0.57,
+    "base_mass": 0.96,
+    "leak": 0.040000000000000036,
+    "p_other": 0,
+    "entropy": 1.8545510340912548,
+    "base_order": [
+      "dengue",
+      "scrub_typhus",
+      "typhoid",
+      "leptospirosis",
+      "malaria",
+      "influenza"
+    ],
+    "top5": [
+      [
+        "dengue",
+        0.58
+      ],
+      [
+        "scrub_typhus",
+        0.2
+      ],
+      [
+        "typhoid",
+        0.1
+      ],
+      [
+        "leptospirosis",
+        0.06
+      ],
+      [
+        "chikungunya",
+        0.02
+      ]
+    ],
+    "in_tok": 4586,
+    "secs": 1.4
+  },
+  {
+    "n": 255,
+    "regime": "mixed",
+    "choice": "dengue",
+    "conf": 0.45,
+    "base_mass": 0.93,
+    "leak": 0.06999999999999995,
+    "p_other": 0,
+    "entropy": 2.1937715686223638,
+    "base_order": [
+      "dengue",
+      "scrub_typhus",
+      "typhoid",
+      "leptospirosis",
+      "malaria",
+      "influenza"
+    ],
+    "top5": [
+      [
+        "dengue",
+        0.46
+      ],
+      [
+        "scrub_typhus",
+        0.23
+      ],
+      [
+        "typhoid",
+        0.12
+      ],
+      [
+        "leptospirosis",
+        0.1
+      ],
+      [
+        "malaria",
+        0.02
+      ]
+    ],
+    "in_tok": 5906,
+    "secs": 1.7
+  }
+]

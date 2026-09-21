@@ -23,6 +23,8 @@ every single state tested, including the ones it was 100% certain about.
     findings_bank.json    25 history findings with per-disease likelihoods
     triage_loop.py        adaptive multi-round history-taking loop
     docs/                 static web demo (see Web demo below)
+    SCALING.md            measured limits of the flat option set (255 cap)
+    scaling_probe*.py     the probes behind SCALING.md
 
 ## Single-shot results
 
@@ -222,6 +224,10 @@ diagnostic accuracy.
   sourced from epidemiological data. Real use needs real priors.
 - Six diseases, one clinical presentation (tropical fever). Anything else must
   hit the escape hatch -- which is tested, but the list is still narrow.
+- **The API caps `choice` at 255 options.** A flat list cannot scale to a real
+  differential, and on ambiguous states confidence decays as the list grows
+  (0.65 -> 0.45 from 7 -> 255 options) even though ranking stays stable. See
+  SCALING.md for the measurements and the hierarchical design that follows.
 - `warning_signs_present` scored only 0.43 on the malaria state because the
   criteria wording listed dengue-flavoured danger signs. Prompt-design fault,
   not a model fault -- make warning-sign criteria disease-agnostic.
