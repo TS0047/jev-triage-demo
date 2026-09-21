@@ -1,0 +1,245 @@
+{
+  "case": "state_d.txt",
+  "generated_utc": "2026-09-21 10:35 UTC",
+  "phraser": "openrouter",
+  "phrase_model": "meta-llama/llama-3.3-70b-instruct",
+  "truth": "typhoid",
+  "diseases": [
+    "dengue",
+    "malaria",
+    "typhoid",
+    "leptospirosis",
+    "scrub_typhus",
+    "influenza"
+  ],
+  "bank_size": 25,
+  "bank": [
+    {
+      "id": "eschar",
+      "probe": "Is there a painless black scab or crusted ulcer anywhere on the body, including the groin, armpit or waistline?",
+      "supports": {
+        "scrub_typhus": 0.55
+      }
+    },
+    {
+      "id": "tertian_chills",
+      "probe": "Does the fever come with violent shaking chills followed by drenching sweats, returning at roughly the same time every second day?",
+      "supports": {
+        "malaria": 0.7
+      }
+    },
+    {
+      "id": "flood_water_contact",
+      "probe": "Did you wade through flood water, mud or a pond, or handle animals, during or after the trip?",
+      "supports": {
+        "leptospirosis": 0.75
+      }
+    },
+    {
+      "id": "retro_orbital_pain",
+      "probe": "Does the headache sit behind the eyes and get worse when you move your eyes?",
+      "supports": {
+        "dengue": 0.7
+      }
+    },
+    {
+      "id": "rash",
+      "probe": "Has any rash, flushing or red blotching appeared on the skin, even briefly?",
+      "supports": {
+        "dengue": 0.5,
+        "scrub_typhus": 0.45,
+        "typhoid": 0.2
+      }
+    },
+    {
+      "id": "conjunctival_suffusion",
+      "probe": "Are the whites of the eyes red or bloodshot without any discharge or itching?",
+      "supports": {
+        "leptospirosis": 0.6
+      }
+    },
+    {
+      "id": "calf_tenderness",
+      "probe": "Are the calf muscles unusually painful or tender to press?",
+      "supports": {
+        "leptospirosis": 0.65
+      }
+    },
+    {
+      "id": "stepladder_fever",
+      "probe": "Did the fever climb a little higher each day over the first week rather than spiking and falling?",
+      "supports": {
+        "typhoid": 0.6
+      }
+    },
+    {
+      "id": "constipation_distension",
+      "probe": "Have the bowels been unusually constipated, with the abdomen feeling bloated or distended?",
+      "supports": {
+        "typhoid": 0.5
+      }
+    },
+    {
+      "id": "swollen_glands",
+      "probe": "Are there tender swollen glands in the neck, armpits or groin?",
+      "supports": {
+        "scrub_typhus": 0.6
+      }
+    },
+    {
+      "id": "daytime_bites",
+      "probe": "Were you bitten by mosquitoes mainly during the daytime, indoors or around the house?",
+      "supports": {
+        "dengue": 0.6
+      }
+    },
+    {
+      "id": "scrub_vegetation",
+      "probe": "Did you sit, walk or lie in tall grass, scrub or bushes, or work in fields during the trip?",
+      "supports": {
+        "scrub_typhus": 0.75
+      }
+    },
+    {
+      "id": "cough_breathlessness",
+      "probe": "Is there a cough, or any breathlessness when walking or climbing stairs?",
+      "supports": {
+        "influenza": 0.7,
+        "scrub_typhus": 0.3
+      }
+    },
+    {
+      "id": "sore_throat_coryza",
+      "probe": "Is there a sore throat, a blocked or runny nose?",
+      "supports": {
+        "influenza": 0.65
+      }
+    },
+    {
+      "id": "sick_contacts",
+      "probe": "Is anyone at home, at work or among your travel companions ill with a similar fever?",
+      "supports": {
+        "influenza": 0.55,
+        "typhoid": 0.25,
+        "dengue": 0.25
+      }
+    },
+    {
+      "id": "bleeding_gums",
+      "probe": "Has there been any bleeding from the gums or nose, or unusual bruising?",
+      "supports": {
+        "dengue": 0.35,
+        "leptospirosis": 0.2
+      }
+    },
+    {
+      "id": "dark_urine",
+      "probe": "Has the urine turned dark, like tea or cola?",
+      "supports": {
+        "malaria": 0.35,
+        "leptospirosis": 0.4
+      }
+    },
+    {
+      "id": "jaundice",
+      "probe": "Have the eyes or skin turned yellow?",
+      "supports": {
+        "leptospirosis": 0.45,
+        "malaria": 0.3
+      }
+    },
+    {
+      "id": "reduced_urine",
+      "probe": "Has the amount of urine dropped noticeably in the last day?",
+      "supports": {
+        "leptospirosis": 0.4,
+        "dengue": 0.25,
+        "malaria": 0.25
+      }
+    },
+    {
+      "id": "abdominal_pain_severe",
+      "probe": "Is there severe or worsening pain in the abdomen, especially on the right side under the ribs?",
+      "supports": {
+        "dengue": 0.4,
+        "typhoid": 0.3
+      }
+    },
+    {
+      "id": "persistent_vomiting",
+      "probe": "Is the vomiting persistent, three or more times in a day, or is it impossible to keep fluids down?",
+      "supports": {
+        "dengue": 0.35,
+        "malaria": 0.25,
+        "typhoid": 0.2
+      }
+    },
+    {
+      "id": "untreated_water",
+      "probe": "Did you drink untreated water, or eat cut fruit or food from a roadside stall during the trip?",
+      "supports": {
+        "typhoid": 0.7
+      }
+    },
+    {
+      "id": "prior_malaria",
+      "probe": "Have you had malaria before, or taken any antimalarial tablets recently?",
+      "supports": {
+        "malaria": 0.35
+      }
+    },
+    {
+      "id": "confusion_drowsy",
+      "probe": "Has there been any confusion, unusual drowsiness or difficulty staying awake?",
+      "supports": {
+        "malaria": 0.2,
+        "typhoid": 0.25,
+        "scrub_typhus": 0.2,
+        "leptospirosis": 0.15
+      }
+    },
+    {
+      "id": "night_outdoor_sleep",
+      "probe": "Did you sleep outdoors, or without a mosquito net, at night during the trip?",
+      "supports": {
+        "malaria": 0.65
+      }
+    }
+  ],
+  "thresholds": {
+    "sufficient": 0.8,
+    "dominance": 0.97,
+    "min_gain": 0.02,
+    "outside": 0.6
+  },
+  "rounds": [],
+  "stop_reason": "illness appears to lie OUTSIDE this differential (outside=0.96, choice=other); the findings bank does not cover it -- escalate",
+  "final": {
+    "choice": "other",
+    "confidence": 1,
+    "probabilities": {
+      "influenza": 0,
+      "leptospirosis": 0,
+      "malaria": 0,
+      "scrub_typhus": 0,
+      "typhoid": 0,
+      "other": 1,
+      "dengue": 0
+    },
+    "urgency": 2.27,
+    "urgency_legend": {
+      "0": "Home care and review in a few days",
+      "1": "Outpatient review within 24 hours",
+      "2": "Same day assessment",
+      "3": "Immediate hospital admission"
+    },
+    "safe_without_clinician": 0.03,
+    "matched": false
+  },
+  "usage": {
+    "calls": 2,
+    "input_tokens": 3810,
+    "output_tokens": 799,
+    "cost": 0.00016002
+  }
+}

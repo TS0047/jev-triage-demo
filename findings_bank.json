@@ -1,0 +1,181 @@
+{
+  "diseases": ["dengue", "malaria", "typhoid", "leptospirosis", "scrub_typhus", "influenza"],
+
+  "findings": [
+    {
+      "id": "eschar",
+      "probe": "Is there a painless black scab or crusted ulcer anywhere on the body, including the groin, armpit or waistline?",
+      "topic": "a painless black scab (eschar) anywhere on the body, including hidden skin folds",
+      "supports": {"scrub_typhus": 0.55},
+      "against": {"dengue": 0.01, "malaria": 0.01, "typhoid": 0.01, "leptospirosis": 0.02, "influenza": 0.01}
+    },
+    {
+      "id": "tertian_chills",
+      "probe": "Does the fever come with violent shaking chills followed by drenching sweats, returning at roughly the same time every second day?",
+      "topic": "shaking chills and drenching sweats that return every second day",
+      "supports": {"malaria": 0.70},
+      "against": {"dengue": 0.08, "typhoid": 0.05, "leptospirosis": 0.10, "scrub_typhus": 0.10, "influenza": 0.10}
+    },
+    {
+      "id": "flood_water_contact",
+      "probe": "Did you wade through flood water, mud or a pond, or handle animals, during or after the trip?",
+      "topic": "contact with flood water, mud, ponds or animals during the trip",
+      "supports": {"leptospirosis": 0.75},
+      "against": {"dengue": 0.15, "malaria": 0.15, "typhoid": 0.15, "scrub_typhus": 0.30, "influenza": 0.10}
+    },
+    {
+      "id": "retro_orbital_pain",
+      "probe": "Does the headache sit behind the eyes and get worse when you move your eyes?",
+      "topic": "pain behind the eyes that worsens on moving the eyes",
+      "supports": {"dengue": 0.70},
+      "against": {"malaria": 0.15, "typhoid": 0.10, "leptospirosis": 0.20, "scrub_typhus": 0.20, "influenza": 0.35}
+    },
+    {
+      "id": "rash",
+      "probe": "Has any rash, flushing or red blotching appeared on the skin, even briefly?",
+      "topic": "any rash, flushing or red blotches on the skin, even brief ones",
+      "supports": {"dengue": 0.50, "scrub_typhus": 0.45, "typhoid": 0.20},
+      "against": {"malaria": 0.03, "leptospirosis": 0.10, "influenza": 0.05}
+    },
+    {
+      "id": "conjunctival_suffusion",
+      "probe": "Are the whites of the eyes red or bloodshot without any discharge or itching?",
+      "topic": "red, bloodshot eyes without discharge or itching",
+      "supports": {"leptospirosis": 0.60},
+      "against": {"dengue": 0.15, "malaria": 0.05, "typhoid": 0.05, "scrub_typhus": 0.20, "influenza": 0.10}
+    },
+    {
+      "id": "calf_tenderness",
+      "probe": "Are the calf muscles unusually painful or tender to press?",
+      "topic": "severe pain or tenderness in the calf muscles",
+      "supports": {"leptospirosis": 0.65},
+      "against": {"dengue": 0.25, "malaria": 0.10, "typhoid": 0.05, "scrub_typhus": 0.10, "influenza": 0.15}
+    },
+    {
+      "id": "stepladder_fever",
+      "probe": "Did the fever climb a little higher each day over the first week rather than spiking and falling?",
+      "topic": "a fever that climbed a little higher each day rather than spiking and falling",
+      "supports": {"typhoid": 0.60},
+      "against": {"dengue": 0.10, "malaria": 0.05, "leptospirosis": 0.15, "scrub_typhus": 0.20, "influenza": 0.10}
+    },
+    {
+      "id": "constipation_distension",
+      "probe": "Have the bowels been unusually constipated, with the abdomen feeling bloated or distended?",
+      "topic": "constipation with a bloated or distended abdomen",
+      "supports": {"typhoid": 0.50},
+      "against": {"dengue": 0.10, "malaria": 0.10, "leptospirosis": 0.10, "scrub_typhus": 0.10, "influenza": 0.05}
+    },
+    {
+      "id": "swollen_glands",
+      "probe": "Are there tender swollen glands in the neck, armpits or groin?",
+      "topic": "tender swollen glands in the neck, armpits or groin",
+      "supports": {"scrub_typhus": 0.60},
+      "against": {"dengue": 0.15, "malaria": 0.05, "typhoid": 0.15, "leptospirosis": 0.10, "influenza": 0.15}
+    },
+    {
+      "id": "daytime_bites",
+      "probe": "Were you bitten by mosquitoes mainly during the daytime, indoors or around the house?",
+      "topic": "mosquito bites mainly during the daytime rather than at night",
+      "supports": {"dengue": 0.60},
+      "against": {"malaria": 0.20, "typhoid": 0.20, "leptospirosis": 0.20, "scrub_typhus": 0.25, "influenza": 0.20}
+    },
+    {
+      "id": "scrub_vegetation",
+      "probe": "Did you sit, walk or lie in tall grass, scrub or bushes, or work in fields during the trip?",
+      "topic": "sitting, walking or working in tall grass, scrub or fields",
+      "supports": {"scrub_typhus": 0.75},
+      "against": {"dengue": 0.25, "malaria": 0.35, "typhoid": 0.20, "leptospirosis": 0.45, "influenza": 0.15}
+    },
+    {
+      "id": "cough_breathlessness",
+      "probe": "Is there a cough, or any breathlessness when walking or climbing stairs?",
+      "topic": "a cough or breathlessness on exertion",
+      "supports": {"influenza": 0.70, "scrub_typhus": 0.30},
+      "against": {"dengue": 0.10, "malaria": 0.10, "typhoid": 0.15, "leptospirosis": 0.20}
+    },
+    {
+      "id": "sore_throat_coryza",
+      "probe": "Is there a sore throat, a blocked or runny nose?",
+      "topic": "a sore throat or a blocked, runny nose",
+      "supports": {"influenza": 0.65},
+      "against": {"dengue": 0.08, "malaria": 0.05, "typhoid": 0.10, "leptospirosis": 0.10, "scrub_typhus": 0.10}
+    },
+    {
+      "id": "sick_contacts",
+      "probe": "Is anyone at home, at work or among your travel companions ill with a similar fever?",
+      "topic": "other people nearby who are ill with a similar fever",
+      "supports": {"influenza": 0.55, "typhoid": 0.25, "dengue": 0.25},
+      "against": {"malaria": 0.10, "leptospirosis": 0.10, "scrub_typhus": 0.05}
+    },
+    {
+      "id": "bleeding_gums",
+      "probe": "Has there been any bleeding from the gums or nose, or unusual bruising?",
+      "topic": "bleeding from the gums or nose, or unusual bruising",
+      "supports": {"dengue": 0.35, "leptospirosis": 0.20},
+      "against": {"malaria": 0.08, "typhoid": 0.05, "scrub_typhus": 0.08, "influenza": 0.02}
+    },
+    {
+      "id": "dark_urine",
+      "probe": "Has the urine turned dark, like tea or cola?",
+      "topic": "urine turning dark like tea or cola",
+      "supports": {"malaria": 0.35, "leptospirosis": 0.40},
+      "against": {"dengue": 0.10, "typhoid": 0.08, "scrub_typhus": 0.10, "influenza": 0.02}
+    },
+    {
+      "id": "jaundice",
+      "probe": "Have the eyes or skin turned yellow?",
+      "topic": "yellowing of the eyes or skin",
+      "supports": {"leptospirosis": 0.45, "malaria": 0.30},
+      "against": {"dengue": 0.10, "typhoid": 0.10, "scrub_typhus": 0.15, "influenza": 0.02}
+    },
+    {
+      "id": "reduced_urine",
+      "probe": "Has the amount of urine dropped noticeably in the last day?",
+      "topic": "passing much less urine than usual in the last day",
+      "supports": {"leptospirosis": 0.40, "dengue": 0.25, "malaria": 0.25},
+      "against": {"typhoid": 0.10, "scrub_typhus": 0.15, "influenza": 0.03}
+    },
+    {
+      "id": "abdominal_pain_severe",
+      "probe": "Is there severe or worsening pain in the abdomen, especially on the right side under the ribs?",
+      "topic": "severe or worsening abdominal pain, especially under the right ribs",
+      "supports": {"dengue": 0.40, "typhoid": 0.30},
+      "against": {"malaria": 0.15, "leptospirosis": 0.20, "scrub_typhus": 0.15, "influenza": 0.05}
+    },
+    {
+      "id": "persistent_vomiting",
+      "probe": "Is the vomiting persistent, three or more times in a day, or is it impossible to keep fluids down?",
+      "topic": "persistent vomiting or being unable to keep fluids down",
+      "supports": {"dengue": 0.35, "malaria": 0.25, "typhoid": 0.20},
+      "against": {"leptospirosis": 0.20, "scrub_typhus": 0.15, "influenza": 0.10}
+    },
+    {
+      "id": "untreated_water",
+      "probe": "Did you drink untreated water, or eat cut fruit or food from a roadside stall during the trip?",
+      "topic": "drinking untreated water or eating roadside food during the trip",
+      "supports": {"typhoid": 0.70},
+      "against": {"dengue": 0.35, "malaria": 0.35, "leptospirosis": 0.40, "scrub_typhus": 0.35, "influenza": 0.30}
+    },
+    {
+      "id": "prior_malaria",
+      "probe": "Have you had malaria before, or taken any antimalarial tablets recently?",
+      "topic": "a past episode of malaria or recent antimalarial tablets",
+      "supports": {"malaria": 0.35},
+      "against": {"dengue": 0.10, "typhoid": 0.10, "leptospirosis": 0.10, "scrub_typhus": 0.10, "influenza": 0.10}
+    },
+    {
+      "id": "confusion_drowsy",
+      "probe": "Has there been any confusion, unusual drowsiness or difficulty staying awake?",
+      "topic": "confusion, unusual drowsiness or difficulty staying awake",
+      "supports": {"malaria": 0.20, "typhoid": 0.25, "scrub_typhus": 0.20, "leptospirosis": 0.15},
+      "against": {"dengue": 0.12, "influenza": 0.05}
+    },
+    {
+      "id": "night_outdoor_sleep",
+      "probe": "Did you sleep outdoors, or without a mosquito net, at night during the trip?",
+      "topic": "sleeping outdoors or without a mosquito net at night",
+      "supports": {"malaria": 0.65},
+      "against": {"dengue": 0.35, "typhoid": 0.30, "leptospirosis": 0.35, "scrub_typhus": 0.45, "influenza": 0.25}
+    }
+  ]
+}

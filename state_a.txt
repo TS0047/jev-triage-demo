@@ -1,0 +1,27 @@
+Patient: male, 34 years old, no known chronic illness, not on any medication.
+
+Presenting complaint (day 5 of illness):
+- Fever up to 103 F, continuous, worse in the evening
+- Severe headache, mainly behind the eyes
+- Generalised body ache and joint pain
+- Loss of appetite, mild nausea, one episode of vomiting yesterday
+- Feeling weak and tired even when the fever comes down
+
+Negatives reported by the patient:
+- No skin rash noticed
+- No cough, no sore throat, no breathlessness
+- No burning urination, no diarrhoea
+- No bleeding from gums or nose, no black stools
+
+History:
+- Lives in Chennai. Returned eight days ago from a week in a rural district of
+  Odisha during the monsoon season. Stayed in a village house, slept without a
+  mosquito net.
+- Ate at roadside stalls during the trip, drank water from a hand pump twice.
+- No sick contacts known.
+- No vaccination history available for typhoid.
+
+Examination and investigations:
+- No vitals recorded yet.
+- No blood counts, no platelet count, no malaria smear, no dengue NS1, no
+  Widal, no urine analysis, no imaging. Nothing has been tested.

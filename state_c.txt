@@ -1,0 +1,41 @@
+Patient: male, 34 years old, no known chronic illness, not on any medication.
+
+Presenting complaint (day 5 of illness):
+- Fever up to 103 F, worse in the evening
+- Severe headache, mainly behind the eyes
+- Generalised body ache and joint pain
+- Loss of appetite, mild nausea, one episode of vomiting yesterday
+- Feeling weak and tired even when the fever comes down
+
+Negatives reported by the patient:
+- No cough, no sore throat, no breathlessness
+- No burning urination, no diarrhoea
+- No bleeding from gums or nose, no black stools
+
+History:
+- Lives in Chennai. Returned eight days ago from a week in a rural district of
+  Odisha during the monsoon season. Stayed in a village house, slept without a
+  mosquito net.
+- Ate at roadside stalls during the trip, drank water from a hand pump twice.
+- No sick contacts known.
+- No vaccination history available for typhoid.
+
+Examination:
+- Temperature 102.8 F, pulse 104/min, blood pressure 110/70 mmHg,
+  respiratory rate 20/min, SpO2 98% on room air.
+- Tourniquet test negative. No petechiae, no rash anywhere on the body.
+- Spleen palpable 3 cm below the costal margin and mildly tender.
+  Liver not enlarged.
+- Mild scleral icterus noted.
+
+Investigations (done today, day 5):
+- Haemoglobin 10.9 g/dL, haematocrit 33 percent (baseline 44 percent)
+- Total white cell count 5,100 per microlitre
+- Platelet count 88,000 per microlitre
+- Dengue NS1 antigen: NEGATIVE. Dengue IgM: NEGATIVE. Dengue IgG: negative.
+- Peripheral smear for malaria parasite: POSITIVE. Plasmodium vivax ring forms
+  and gametocytes seen. Parasite index approximately 2 percent.
+- Rapid malaria antigen test: positive for non-falciparum species.
+- Widal test: negative. Blood culture: no growth at 48 hours.
+- Total bilirubin 3.1 mg/dL (indirect 2.4). SGPT 61 U/L, SGOT 78 U/L.
+- Reticulocyte count raised. Urine routine: normal, no haemoglobinuria.

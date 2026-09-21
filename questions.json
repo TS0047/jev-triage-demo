@@ -1,0 +1,103 @@
+{
+  "primary_diagnosis": {
+    "type": "choice",
+    "instructions": "Based only on the information in the state, which single condition best explains this patient's illness?",
+    "criteria": {
+      "dengue": "Dengue fever",
+      "malaria": "Malaria",
+      "typhoid": "Enteric fever / typhoid",
+      "influenza": "Influenza or another common viral respiratory illness",
+      "leptospirosis": "Leptospirosis",
+      "scrub_typhus": "Scrub typhus or another rickettsial illness",
+      "other": "None of the listed conditions, or the data does not point to any one of them"
+    }
+  },
+
+  "evidence_sufficient": {
+    "type": "noul",
+    "instructions": "Is the information in the state sufficient to commit to a single diagnosis without any further test or examination?",
+    "criteria": {
+      "true": "The findings are decisive enough to name one diagnosis and act on it",
+      "false": "The findings are compatible with more than one condition and further data is needed first"
+    }
+  },
+
+  "diagnostic_certainty": {
+    "type": "score",
+    "instructions": "How certain can a clinician be about the diagnosis given only what is recorded in the state?",
+    "criteria": [
+      "Pure guesswork, the state contains almost nothing discriminating",
+      "A reasonable differential can be formed but no condition stands out",
+      "One condition is more likely than the others but confirmation is still required",
+      "One condition is strongly supported and confirmatory findings are present"
+    ]
+  },
+
+  "most_useful_next_test": {
+    "type": "choice",
+    "instructions": "Which single investigation would reduce the diagnostic uncertainty the most right now, given what has and has not already been done in the state?",
+    "criteria": {
+      "cbc_platelets": "Complete blood count with platelet count and haematocrit",
+      "dengue_ns1": "Dengue NS1 antigen and IgM serology",
+      "malaria_smear": "Peripheral smear or rapid antigen test for malaria",
+      "blood_culture": "Blood culture for enteric fever",
+      "lft_renal": "Liver and renal function panel",
+      "none_needed": "No further test is needed, the diagnosis is already established"
+    }
+  },
+
+  "most_important_missing_information": {
+    "type": "choice",
+    "instructions": "Which piece of information is missing from the state and would most change the assessment if it were known?",
+    "criteria": {
+      "vital_signs": "Vital signs, especially blood pressure, pulse and temperature trend",
+      "platelet_trend": "Platelet count and haematocrit, and whether they are changing",
+      "rash_bleeding_exam": "A proper examination for rash, petechiae, tourniquet test and bleeding sites",
+      "fever_pattern": "The detailed pattern of the fever and whether there are chills and rigors",
+      "abdominal_exam": "Abdominal examination for liver and spleen enlargement and tenderness",
+      "nothing_missing": "Nothing important is missing"
+    }
+  },
+
+  "question_to_ask_patient": {
+    "type": "choice",
+    "instructions": "Considering the history already recorded in the state, which follow-up question to the patient would be the most informative next step?",
+    "criteria": {
+      "chills_rigors": "Whether the fever comes with shaking chills and sweating at regular intervals",
+      "mosquito_exposure_detail": "More detail about daytime versus night-time mosquito bites during the trip",
+      "eschar_or_bite": "Whether there is any painless black scab or insect bite mark anywhere on the body",
+      "water_contact": "Whether there was contact with flood water, mud or animal urine during the trip",
+      "bowel_and_abdomen": "Whether there is constipation, abdominal distension or worsening abdominal pain",
+      "no_question_needed": "No further history is needed, testing should proceed directly"
+    }
+  },
+
+  "warning_signs_present": {
+    "type": "noul",
+    "instructions": "Does the state document any warning sign or danger sign that indicates the patient may be deteriorating?",
+    "criteria": {
+      "true": "One or more warning signs such as haemodynamic instability, bleeding, persistent vomiting or a falling platelet count are recorded",
+      "false": "No warning sign is documented in the state"
+    }
+  },
+
+  "care_urgency": {
+    "type": "score",
+    "instructions": "How urgently does this patient need to be seen, given what is recorded in the state?",
+    "criteria": [
+      "Can be managed at home with fluids and review in a few days",
+      "Should be reviewed in an outpatient clinic within twenty four hours with baseline tests",
+      "Needs same day assessment and investigation",
+      "Needs immediate hospital admission and monitoring"
+    ]
+  },
+
+  "safe_to_act_without_clinician": {
+    "type": "noul",
+    "instructions": "Would it be safe for an automated system to act on this assessment without a qualified clinician reviewing it?",
+    "criteria": {
+      "true": "The situation is low risk and unambiguous enough for automated action",
+      "false": "A qualified clinician must review before any action is taken"
+    }
+  }
+}

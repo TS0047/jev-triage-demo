@@ -1,0 +1,38 @@
+Patient: male, 34 years old, no known chronic illness, not on any medication.
+
+Presenting complaint (day 5 of illness):
+- Fever up to 103 F, continuous, worse in the evening
+- Severe headache, mainly behind the eyes
+- Generalised body ache and joint pain
+- Loss of appetite, mild nausea, one episode of vomiting yesterday
+- Feeling weak and tired even when the fever comes down
+
+Negatives reported by the patient:
+- No skin rash noticed
+- No cough, no sore throat, no breathlessness
+- No burning urination, no diarrhoea
+- No bleeding from gums or nose, no black stools
+
+History:
+- Lives in Chennai. Returned eight days ago from a week in a rural district of
+  Odisha during the monsoon season. Stayed in a village house, slept without a
+  mosquito net.
+- Ate at roadside stalls during the trip, drank water from a hand pump twice.
+- No sick contacts known.
+- No vaccination history available for typhoid.
+
+Examination:
+- Temperature 102.6 F, pulse 118/min, blood pressure 96/64 mmHg,
+  respiratory rate 22/min, SpO2 98% on room air.
+- Tourniquet test positive. Fine petechiae over both forearms.
+- Mild tenderness in the right upper abdomen, liver palpable 2 cm below the
+  costal margin. No splenomegaly.
+
+Investigations (done today, day 5):
+- Haemoglobin 16.8 g/dL, haematocrit 52 percent (baseline 44 percent)
+- Total white cell count 2,900 per microlitre, lymphocytes 48 percent
+- Platelet count 62,000 per microlitre (was 140,000 yesterday)
+- Dengue NS1 antigen: POSITIVE. Dengue IgM: positive.
+- Peripheral smear for malaria parasite: negative, twice
+- Widal test: negative. Blood culture: no growth at 48 hours.
+- Urine routine: normal. SGPT 94 U/L, SGOT 110 U/L.

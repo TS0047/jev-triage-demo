@@ -1,0 +1,34 @@
+Patient: female, 27 years old, no known chronic illness, not on any medication.
+
+Presenting complaint (day 6 of illness):
+- Fever up to 101 F, low grade, mostly in the afternoons
+- Severe joint pain in both wrists, both knees and the small joints of the
+  hands, with visible swelling and early morning stiffness lasting two hours
+- Marked fatigue
+- A red raised rash across both cheeks and the bridge of the nose, worse after
+  being out in the sun
+- Painless ulcers inside the mouth
+- Hair thinning noticeably over the last three months
+
+Negatives reported by the patient:
+- No cough, no sore throat, no breathlessness
+- No vomiting, no diarrhoea, no abdominal pain
+- No bleeding from gums or nose
+
+History:
+- Lives in Chennai. No travel anywhere in the last two years.
+- No mosquito exposure of note, sleeps indoors with air conditioning.
+- Eats only home-cooked food, uses filtered water.
+- No sick contacts known.
+- Three months of intermittent joint pain and fatigue before this fever began.
+- Mother has hypothyroidism.
+
+Examination and investigations:
+- Temperature 100.8 F, pulse 88/min, blood pressure 118/76 mmHg.
+- Symmetrical swelling and tenderness of wrist and knee joints.
+- Malar rash present, sparing the nasolabial folds.
+- No eschar, no splenomegaly, no neck stiffness.
+- Haemoglobin 9.4 g/dL, white cell count 3,100, platelets 118,000.
+- ESR 88 mm/hr. Urine routine shows protein 2+ and red cell casts.
+- Dengue NS1 negative. Malaria smear negative. Widal negative.
+  Blood culture no growth. Scrub typhus IgM negative. Leptospira IgM negative.
