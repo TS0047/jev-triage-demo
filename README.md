@@ -44,16 +44,6 @@ research work on `main` never touches the live site.
     REALCASES.md          evaluation on REAL published cases: 94% refusal
     BOTTLENECK.md         too few diseases, or too little data? (measured)
     HYPOTHESIS_SPACE.md   nothing is trained: why the option list IS the model
-    WIDE_TREE.md          2,505 conditions in 2 calls; wide beats deep
-    ESCALATION_AUDIT.md   were the refusals honest? (only 3/11 were)
-    BACKTRACKING.md       overlapping categories + reverse traversal
-    build_multilabel.py   cross-files conditions: 0.3% -> 40.8% overlap
-    backtrack_router.py   L1-only escalation, L2 backtracks with exclusion
-    audit_escalations.py  classifies every escalation: absent vs misrouted
-    wide_router_topk.py   top-K descent (measured WORSE - negative result)
-    build_taxonomy.py     harvests a 24 x 250 taxonomy from real corpus data
-    wide_router.py        two-level router, escape hatch at both levels
-    eval_wide.py          flat vs wide vs deep on real cases
     hypothesis_space.py   list-as-sample-space + names-only list expansion
     coverage_curve.py     how many conditions to cover X% of real cases
     shape_of_problem.py   the Zipf treadmill behind list growth
@@ -267,18 +257,6 @@ diagnostic accuracy.
 
 ## Known limits
 
-- **"The disease does not exist" is a level-1 decision only** (BACKTRACKING.md).
-  Level 2 sees one category and cannot tell "absent from the system" from
-  "wrong shelf", so it now returns a `wrong_branch` routing signal and the
-  router backs up to level 1 with that category excluded. Multi-label filing
-  (0.3% -> 40.8% overlap) is what makes this safe: backtracking on a
-  single-label tree raised confabulations from 3 to 7, because excluding the
-  right branch forces a confident wrong answer.
-- **The 255-option cap is solved by width, not depth** (WIDE_TREE.md):
-  24 categories x up to 250 conditions = 2,505 addressable in 2 calls, 51x
-  the original 49. On real cases: flat 1/22, wide 10/22. Wide also beats a
-  3-level tree of the same conditions (50.0% vs 43.8%) while costing fewer
-  calls - routing error compounds as p^d, so depth is paid for twice.
 - **Nothing is trained.** Jev is frozen behind an API; the option list is the
   sample space, so an absent condition has no probability rather than a low
   one. Growing the list costs only the names: a 200-name list built from
