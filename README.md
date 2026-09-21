@@ -11,6 +11,16 @@ every single state tested, including the ones it was 100% certain about.
 
 **Live demo:** https://ts0047.github.io/jev-triage-demo/
 
+## Branches
+
+    production                 hosted site source (GitHub Pages -> /docs). Stable.
+    main                       research trunk, carries both arms
+    flat-differential          flat option set + scaling measurements
+    hierarchical-differential  clinical hierarchy (see HIERARCHY.md)
+
+Deploy by merging into `production`; Pages builds from that branch only, so
+research work on `main` never touches the live site.
+
 ## Files
 
     .env                  API keys, chmod 600, git-ignored (see .env.example)
@@ -25,6 +35,11 @@ every single state tested, including the ones it was 100% certain about.
     docs/                 static web demo (see Web demo below)
     SCALING.md            measured limits of the flat option set (255 cap)
     scaling_probe*.py     the probes behind SCALING.md
+    HIERARCHY.md          clinical reasoning frameworks + head-to-head results
+    hierarchical_router.py  ROWS / qualifiers / syndrome / sieve / scripts routing
+    compare_arms.py       flat-255 vs hierarchical, same states same day
+    state_e.txt           meningococcal meningitis (red flags must fire)
+    state_f.txt           chronic zoonotic fever (tempo + epi gate)
 
 ## Single-shot results
 
