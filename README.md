@@ -40,6 +40,9 @@ research work on `main` never touches the live site.
     validate_grids.py     mechanical grid checks; exits non-zero on any failure
     DATASETS.md           public datasets + measured accuracy against DDXPlus
     MATRIX.md             how likelihoods are set, and how to learn them properly
+    DATASET_SCALE.md      is a bigger dataset the answer? (measured: no)
+    learning_curve.py     accuracy vs training-set size; saturates at n=2,500
+    dataset_structure.py  DDXPlus's 99.44% lookup ceiling
     learn_likelihoods_v2.py  applicability-aware MLE over 134k DDXPlus patients
     compare_matrices.py   held-out: learned vs hand-authored-granularity
     noise_sensitivity.py  direction-vs-precision sensitivity
@@ -247,6 +250,10 @@ diagnostic accuracy.
 
 ## Known limits
 
+- DDXPlus is synthetic and near-deterministic: memorising every evidence set
+  scores 99.44%, and only 3.09% of patients sit in an ambiguous set. High
+  accuracy there measures generator inversion, not clinical reasoning
+  (DATASET_SCALE.md).
 - The findings bank is hand-authored and its likelihoods are plausible, not
   sourced from epidemiological data. Real use needs real priors. Measured
   consequence (MATRIX.md): exact decimals barely matter (rounding everything

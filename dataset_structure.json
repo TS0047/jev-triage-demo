@@ -1,0 +1,8 @@
+{
+ "patients": 134529,
+ "pathologies": 49,
+ "distinct_sets": 43921,
+ "colliding_sets": 340,
+ "patients_in_collision": 4153,
+ "lookup_ceiling": 0.9943952605014532
+}
