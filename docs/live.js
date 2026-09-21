@@ -12,6 +12,10 @@
    - Hard stop: this is a demo, not advice. Consent gate first.
    ============================================================ */
 
+/* Demo key, deliberately public: this is a static site with no server to
+   hide a credential. Visitors need not bring their own. Rotate at
+   openjev.sh if it is abused. A visitor-supplied key overrides it. */
+const DEMO_KEY = "oj_live.user_3JdHzlgTpOzAGjJRFhXhwXQhtOe.ea5dd9772784dfc8d137a2a9d2e3b1b3";
 const API = "https://api.openjev.sh/v1/systemone";
 const LIMITS = { rounds: 8, dominance: 0.97, minGain: 0.02, outside: 0.60, floor: 0.02 };
 
@@ -131,9 +135,9 @@ function clearErr() { $("#lv-err").style.display = "none"; }
 /* ---------- flow ---------- */
 async function startConsult() {
   clearErr();
-  const key = $("#lv-key").value.trim();
+  const key = $("#lv-key").value.trim() || DEMO_KEY;
   const sym = $("#lv-symptoms").value.trim();
-  if (!key) return showErr("Enter your OpenJEV API key to run a live consultation.");
+  if (!key) return showErr("No API key available.");
   if (sym.length < 15) return showErr("Describe the symptoms in a little more detail (at least a sentence).");
 
   const age = $("#lv-age").value.trim();
@@ -153,7 +157,7 @@ async function startConsult() {
     key, state, remaining: [...BANK.findings], asked: [], round: 0,
     usage: { calls: 0, cost: 0, in: 0, out: 0 }, stop: null
   };
-  sessionStorage.setItem("ojk", key);
+  if (key !== DEMO_KEY) sessionStorage.setItem("ojk", key);
 
   $("#lv-intake").style.display = "none";
   $("#lv-run").style.display = "block";

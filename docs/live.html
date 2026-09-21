@@ -170,18 +170,18 @@ footer a{color:var(--mut)}
 
 <div id="lv-body" style="display:none">
 
-  <div id="lv-intake">
-    <div class="panel card sec">
-      <h3>Your API key</h3>
-      <div class="keyrow"><input id="lv-key" type="password" placeholder="Paste your OpenJEV API key" autocomplete="off" spellcheck="false"></div>
-      <p class="hint">Needed because this page is static — there is no server to hold a key.
-      Yours stays in this tab only (cleared when you close it), is sent nowhere except
+  <div id="lv-intake" style="display:flex;flex-direction:column">
+    <div class="panel card sec" style="order:2">
+      <h3>API key <span style="color:var(--ok);font-size:11px">— not needed, a demo key is built in</span></h3>
+      <div class="keyrow"><input id="lv-key" type="password" placeholder="Optional — leave blank to use the demo key" autocomplete="off" spellcheck="false"></div>
+      <p class="hint">This demo ships with a shared key, so you can just start. Enter your own
+      only if you'd rather not use it — yours stays in this tab, is sent nowhere except
       <span style="font-family:var(--mono)">api.openjev.sh</span>, and is never stored by this site.
-      Get a free key at <a href="https://openjev.sh" target="_blank" rel="noopener">openjev.sh</a>.
+      Free keys at <a href="https://openjev.sh" target="_blank" rel="noopener">openjev.sh</a>.
       A consultation costs about $0.001.</p>
     </div>
 
-    <div class="panel card sec">
+    <div class="panel card sec" style="order:1">
       <h3>The patient</h3>
       <div class="row">
         <div><label for="lv-age">Age</label><input id="lv-age" inputmode="numeric" placeholder="34"></div>
