@@ -1,0 +1,20 @@
+Patient: female, 29 years old, no known chronic illness, not on any medication.
+
+Presenting complaint (day 4 of illness):
+- Fever, intermittent, up to 102 F
+- Generalised body ache
+- Mild headache
+- Feeling tired
+
+Negatives reported by the patient:
+- No rash noticed
+- No cough, no sore throat
+- No vomiting, no diarrhoea
+
+History:
+- Lives in Chennai. No recent travel.
+- No known sick contacts.
+
+Examination and investigations:
+- No vitals recorded yet.
+- Nothing has been tested.
