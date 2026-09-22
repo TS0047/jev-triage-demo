@@ -18,6 +18,7 @@ every single state tested, including the ones it was 100% certain about.
     state_b.txt           same patient + NS1 positive, platelets 62k falling (dengue, decisive)
     state_c.txt           same symptoms, NS1 NEGATIVE, vivax on smear (contradicts the anchor)
     state_d.txt           lupus presentation -- deliberately OUTSIDE the differential
+    state_g.txt           thin symptoms, no travel/exposure clue -- forces 7 adaptive rounds
     questions.json        9-question battery, all three primitives
     run_test.py           single-shot: run the battery against one state
     findings_bank.json    25 history findings with per-disease likelihoods

@@ -1,0 +1,638 @@
+{
+  "case": "state_g.txt",
+  "generated_utc": "2026-09-22 00:26 UTC",
+  "phraser": "template",
+  "phrase_model": null,
+  "truth": "typhoid",
+  "diseases": [
+    "dengue",
+    "malaria",
+    "typhoid",
+    "leptospirosis",
+    "scrub_typhus",
+    "influenza"
+  ],
+  "bank_size": 25,
+  "bank": [
+    {
+      "id": "eschar",
+      "probe": "Is there a painless black scab or crusted ulcer anywhere on the body, including the groin, armpit or waistline?",
+      "supports": {
+        "scrub_typhus": 0.55
+      }
+    },
+    {
+      "id": "tertian_chills",
+      "probe": "Does the fever come with violent shaking chills followed by drenching sweats, returning at roughly the same time every second day?",
+      "supports": {
+        "malaria": 0.7
+      }
+    },
+    {
+      "id": "flood_water_contact",
+      "probe": "Did you wade through flood water, mud or a pond, or handle animals, during or after the trip?",
+      "supports": {
+        "leptospirosis": 0.75
+      }
+    },
+    {
+      "id": "retro_orbital_pain",
+      "probe": "Does the headache sit behind the eyes and get worse when you move your eyes?",
+      "supports": {
+        "dengue": 0.7
+      }
+    },
+    {
+      "id": "rash",
+      "probe": "Has any rash, flushing or red blotching appeared on the skin, even briefly?",
+      "supports": {
+        "dengue": 0.5,
+        "scrub_typhus": 0.45,
+        "typhoid": 0.2
+      }
+    },
+    {
+      "id": "conjunctival_suffusion",
+      "probe": "Are the whites of the eyes red or bloodshot without any discharge or itching?",
+      "supports": {
+        "leptospirosis": 0.6
+      }
+    },
+    {
+      "id": "calf_tenderness",
+      "probe": "Are the calf muscles unusually painful or tender to press?",
+      "supports": {
+        "leptospirosis": 0.65
+      }
+    },
+    {
+      "id": "stepladder_fever",
+      "probe": "Did the fever climb a little higher each day over the first week rather than spiking and falling?",
+      "supports": {
+        "typhoid": 0.6
+      }
+    },
+    {
+      "id": "constipation_distension",
+      "probe": "Have the bowels been unusually constipated, with the abdomen feeling bloated or distended?",
+      "supports": {
+        "typhoid": 0.5
+      }
+    },
+    {
+      "id": "swollen_glands",
+      "probe": "Are there tender swollen glands in the neck, armpits or groin?",
+      "supports": {
+        "scrub_typhus": 0.6
+      }
+    },
+    {
+      "id": "daytime_bites",
+      "probe": "Were you bitten by mosquitoes mainly during the daytime, indoors or around the house?",
+      "supports": {
+        "dengue": 0.6
+      }
+    },
+    {
+      "id": "scrub_vegetation",
+      "probe": "Did you sit, walk or lie in tall grass, scrub or bushes, or work in fields during the trip?",
+      "supports": {
+        "scrub_typhus": 0.75
+      }
+    },
+    {
+      "id": "cough_breathlessness",
+      "probe": "Is there a cough, or any breathlessness when walking or climbing stairs?",
+      "supports": {
+        "influenza": 0.7,
+        "scrub_typhus": 0.3
+      }
+    },
+    {
+      "id": "sore_throat_coryza",
+      "probe": "Is there a sore throat, a blocked or runny nose?",
+      "supports": {
+        "influenza": 0.65
+      }
+    },
+    {
+      "id": "sick_contacts",
+      "probe": "Is anyone at home, at work or among your travel companions ill with a similar fever?",
+      "supports": {
+        "influenza": 0.55,
+        "typhoid": 0.25,
+        "dengue": 0.25
+      }
+    },
+    {
+      "id": "bleeding_gums",
+      "probe": "Has there been any bleeding from the gums or nose, or unusual bruising?",
+      "supports": {
+        "dengue": 0.35,
+        "leptospirosis": 0.2
+      }
+    },
+    {
+      "id": "dark_urine",
+      "probe": "Has the urine turned dark, like tea or cola?",
+      "supports": {
+        "malaria": 0.35,
+        "leptospirosis": 0.4
+      }
+    },
+    {
+      "id": "jaundice",
+      "probe": "Have the eyes or skin turned yellow?",
+      "supports": {
+        "leptospirosis": 0.45,
+        "malaria": 0.3
+      }
+    },
+    {
+      "id": "reduced_urine",
+      "probe": "Has the amount of urine dropped noticeably in the last day?",
+      "supports": {
+        "leptospirosis": 0.4,
+        "dengue": 0.25,
+        "malaria": 0.25
+      }
+    },
+    {
+      "id": "abdominal_pain_severe",
+      "probe": "Is there severe or worsening pain in the abdomen, especially on the right side under the ribs?",
+      "supports": {
+        "dengue": 0.4,
+        "typhoid": 0.3
+      }
+    },
+    {
+      "id": "persistent_vomiting",
+      "probe": "Is the vomiting persistent, three or more times in a day, or is it impossible to keep fluids down?",
+      "supports": {
+        "dengue": 0.35,
+        "malaria": 0.25,
+        "typhoid": 0.2
+      }
+    },
+    {
+      "id": "untreated_water",
+      "probe": "Did you drink untreated water, or eat cut fruit or food from a roadside stall during the trip?",
+      "supports": {
+        "typhoid": 0.7
+      }
+    },
+    {
+      "id": "prior_malaria",
+      "probe": "Have you had malaria before, or taken any antimalarial tablets recently?",
+      "supports": {
+        "malaria": 0.35
+      }
+    },
+    {
+      "id": "confusion_drowsy",
+      "probe": "Has there been any confusion, unusual drowsiness or difficulty staying awake?",
+      "supports": {
+        "malaria": 0.2,
+        "typhoid": 0.25,
+        "scrub_typhus": 0.2,
+        "leptospirosis": 0.15
+      }
+    },
+    {
+      "id": "night_outdoor_sleep",
+      "probe": "Did you sleep outdoors, or without a mosquito net, at night during the trip?",
+      "supports": {
+        "malaria": 0.65
+      }
+    }
+  ],
+  "thresholds": {
+    "sufficient": 0.8,
+    "dominance": 0.97,
+    "min_gain": 0.02,
+    "outside": 0.6
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "entropy": 2.085,
+      "sufficient": 0.03,
+      "certainty": 1.09,
+      "outside": 0.12,
+      "posterior": {
+        "malaria": 0.01,
+        "other": 0.36,
+        "typhoid": 0.03,
+        "scrub_typhus": 0.01,
+        "influenza": 0.13,
+        "dengue": 0.45,
+        "leptospirosis": 0.01
+      },
+      "chosen": "cough_breathlessness",
+      "eig": 0.163,
+      "prior_p": 0.04,
+      "candidates": [
+        {
+          "id": "cough_breathlessness",
+          "eig": 0.163,
+          "p": 0.04
+        },
+        {
+          "id": "sore_throat_coryza",
+          "eig": 0.116,
+          "p": 0.03
+        },
+        {
+          "id": "untreated_water",
+          "eig": 0.112,
+          "p": 0.05
+        },
+        {
+          "id": "scrub_vegetation",
+          "eig": 0.091,
+          "p": 0.06
+        },
+        {
+          "id": "night_outdoor_sleep",
+          "eig": 0.079,
+          "p": 0.06
+        },
+        {
+          "id": "eschar",
+          "eig": 0.074,
+          "p": 0.05
+        }
+      ],
+      "question": "Is there a cough, or any breathlessness when walking or climbing stairs?",
+      "reply": "No, I do not think so.",
+      "interpreted": "absent",
+      "interp_p": 0.03,
+      "probe": "Is there a cough, or any breathlessness when walking or climbing stairs?"
+    },
+    {
+      "round": 2,
+      "entropy": 2.036,
+      "sufficient": 0.03,
+      "certainty": 1.01,
+      "outside": 0.13,
+      "posterior": {
+        "influenza": 0.18,
+        "typhoid": 0.01,
+        "leptospirosis": 0.01,
+        "scrub_typhus": 0.01,
+        "dengue": 0.52,
+        "other": 0.26,
+        "malaria": 0.01
+      },
+      "chosen": "sore_throat_coryza",
+      "eig": 0.135,
+      "prior_p": 0.05,
+      "candidates": [
+        {
+          "id": "sore_throat_coryza",
+          "eig": 0.135,
+          "p": 0.05
+        },
+        {
+          "id": "eschar",
+          "eig": 0.085,
+          "p": 0.05
+        },
+        {
+          "id": "scrub_vegetation",
+          "eig": 0.081,
+          "p": 0.06
+        },
+        {
+          "id": "flood_water_contact",
+          "eig": 0.072,
+          "p": 0.06
+        },
+        {
+          "id": "tertian_chills",
+          "eig": 0.06,
+          "p": 0.07
+        },
+        {
+          "id": "untreated_water",
+          "eig": 0.059,
+          "p": 0.06
+        }
+      ],
+      "question": "Is there a sore throat, a blocked or runny nose?",
+      "reply": "No, nothing like that at all.",
+      "interpreted": "absent",
+      "interp_p": 0.02,
+      "probe": "Is there a sore throat, a blocked or runny nose?"
+    },
+    {
+      "round": 3,
+      "entropy": 1.968,
+      "sufficient": 0.03,
+      "certainty": 1.05,
+      "outside": 0.13,
+      "posterior": {
+        "malaria": 0.02,
+        "typhoid": 0.01,
+        "influenza": 0.13,
+        "other": 0.23,
+        "leptospirosis": 0.01,
+        "scrub_typhus": 0.01,
+        "dengue": 0.59
+      },
+      "chosen": "eschar",
+      "eig": 0.09,
+      "prior_p": 0.06,
+      "candidates": [
+        {
+          "id": "eschar",
+          "eig": 0.09,
+          "p": 0.06
+        },
+        {
+          "id": "tertian_chills",
+          "eig": 0.078,
+          "p": 0.06
+        },
+        {
+          "id": "scrub_vegetation",
+          "eig": 0.075,
+          "p": 0.06
+        },
+        {
+          "id": "flood_water_contact",
+          "eig": 0.072,
+          "p": 0.06
+        },
+        {
+          "id": "stepladder_fever",
+          "eig": 0.054,
+          "p": 0.06
+        },
+        {
+          "id": "jaundice",
+          "eig": 0.051,
+          "p": 0.05
+        }
+      ],
+      "question": "Is there a painless black scab or crusted ulcer anywhere on the body, including the groin, armpit or waistline?",
+      "reply": "No, nothing like that at all.",
+      "interpreted": "absent",
+      "interp_p": 0.02,
+      "probe": "Is there a painless black scab or crusted ulcer anywhere on the body, including the groin, armpit or waistline?"
+    },
+    {
+      "round": 4,
+      "entropy": 2.199,
+      "sufficient": 0.03,
+      "certainty": 1.02,
+      "outside": 0.12,
+      "posterior": {
+        "influenza": 0.29,
+        "other": 0.17,
+        "scrub_typhus": 0.03,
+        "typhoid": 0.03,
+        "dengue": 0.45,
+        "leptospirosis": 0.01,
+        "malaria": 0.02
+      },
+      "chosen": "scrub_vegetation",
+      "eig": 0.105,
+      "prior_p": 0.07,
+      "candidates": [
+        {
+          "id": "scrub_vegetation",
+          "eig": 0.105,
+          "p": 0.07
+        },
+        {
+          "id": "flood_water_contact",
+          "eig": 0.079,
+          "p": 0.06
+        },
+        {
+          "id": "tertian_chills",
+          "eig": 0.073,
+          "p": 0.06
+        },
+        {
+          "id": "stepladder_fever",
+          "eig": 0.067,
+          "p": 0.07
+        },
+        {
+          "id": "jaundice",
+          "eig": 0.064,
+          "p": 0.05
+        },
+        {
+          "id": "untreated_water",
+          "eig": 0.062,
+          "p": 0.06
+        }
+      ],
+      "question": "Did you sit, walk or lie in tall grass, scrub or bushes, or work in fields during the trip?",
+      "reply": "No, I do not think so.",
+      "interpreted": "absent",
+      "interp_p": 0.04,
+      "probe": "Did you sit, walk or lie in tall grass, scrub or bushes, or work in fields during the trip?"
+    },
+    {
+      "round": 5,
+      "entropy": 2.29,
+      "sufficient": 0.03,
+      "certainty": 1,
+      "outside": 0.13,
+      "posterior": {
+        "other": 0.18,
+        "typhoid": 0.04,
+        "dengue": 0.39,
+        "influenza": 0.31,
+        "scrub_typhus": 0.05,
+        "malaria": 0.02,
+        "leptospirosis": 0.01
+      },
+      "chosen": "flood_water_contact",
+      "eig": 0.075,
+      "prior_p": 0.08,
+      "candidates": [
+        {
+          "id": "flood_water_contact",
+          "eig": 0.075,
+          "p": 0.08
+        },
+        {
+          "id": "untreated_water",
+          "eig": 0.073,
+          "p": 0.08
+        },
+        {
+          "id": "stepladder_fever",
+          "eig": 0.073,
+          "p": 0.07
+        },
+        {
+          "id": "tertian_chills",
+          "eig": 0.07,
+          "p": 0.06
+        },
+        {
+          "id": "jaundice",
+          "eig": 0.066,
+          "p": 0.05
+        },
+        {
+          "id": "night_outdoor_sleep",
+          "eig": 0.065,
+          "p": 0.08
+        }
+      ],
+      "question": "Did you wade through flood water, mud or a pond, or handle animals, during or after the trip?",
+      "reply": "No, I do not think so.",
+      "interpreted": "absent",
+      "interp_p": 0.04,
+      "probe": "Did you wade through flood water, mud or a pond, or handle animals, during or after the trip?"
+    },
+    {
+      "round": 6,
+      "entropy": 2.143,
+      "sufficient": 0.03,
+      "certainty": 1.03,
+      "outside": 0.12,
+      "posterior": {
+        "malaria": 0.02,
+        "typhoid": 0.03,
+        "dengue": 0.5,
+        "scrub_typhus": 0.03,
+        "influenza": 0.23,
+        "other": 0.19,
+        "leptospirosis": 0
+      },
+      "chosen": "tertian_chills",
+      "eig": 0.074,
+      "prior_p": 0.06,
+      "candidates": [
+        {
+          "id": "tertian_chills",
+          "eig": 0.074,
+          "p": 0.06
+        },
+        {
+          "id": "stepladder_fever",
+          "eig": 0.067,
+          "p": 0.07
+        },
+        {
+          "id": "untreated_water",
+          "eig": 0.059,
+          "p": 0.08
+        },
+        {
+          "id": "constipation_distension",
+          "eig": 0.051,
+          "p": 0.05
+        },
+        {
+          "id": "jaundice",
+          "eig": 0.05,
+          "p": 0.06
+        },
+        {
+          "id": "dark_urine",
+          "eig": 0.049,
+          "p": 0.05
+        }
+      ],
+      "question": "Does the fever come with violent shaking chills followed by drenching sweats, returning at roughly the same time every second day?",
+      "reply": "No, nothing like that at all.",
+      "interpreted": "absent",
+      "interp_p": 0.02,
+      "probe": "Does the fever come with violent shaking chills followed by drenching sweats, returning at roughly the same time every second day?"
+    },
+    {
+      "round": 7,
+      "entropy": 1.845,
+      "sufficient": 0.03,
+      "certainty": 1,
+      "outside": 0.12,
+      "posterior": {
+        "other": 0.14,
+        "malaria": 0,
+        "typhoid": 0.03,
+        "dengue": 0.66,
+        "influenza": 0.16,
+        "leptospirosis": 0,
+        "scrub_typhus": 0.01
+      },
+      "chosen": "stepladder_fever",
+      "eig": 0.072,
+      "prior_p": 0.07,
+      "candidates": [
+        {
+          "id": "stepladder_fever",
+          "eig": 0.072,
+          "p": 0.07
+        },
+        {
+          "id": "constipation_distension",
+          "eig": 0.052,
+          "p": 0.05
+        },
+        {
+          "id": "jaundice",
+          "eig": 0.042,
+          "p": 0.05
+        },
+        {
+          "id": "dark_urine",
+          "eig": 0.037,
+          "p": 0.05
+        },
+        {
+          "id": "untreated_water",
+          "eig": 0.037,
+          "p": 0.08
+        },
+        {
+          "id": "swollen_glands",
+          "eig": 0.034,
+          "p": 0.08
+        }
+      ],
+      "question": "Did the fever climb a little higher each day over the first week rather than spiking and falling?",
+      "reply": "Yes, now that you mention it, that is true.",
+      "interpreted": "present",
+      "interp_p": 0.98,
+      "probe": "Did the fever climb a little higher each day over the first week rather than spiking and falling?"
+    }
+  ],
+  "stop_reason": "leading diagnosis at 0.97 >= 0.97 (history alone cannot go further; needs a test)",
+  "final": {
+    "choice": "typhoid",
+    "confidence": 0.96,
+    "probabilities": {
+      "other": 0,
+      "malaria": 0,
+      "scrub_typhus": 0.01,
+      "influenza": 0,
+      "leptospirosis": 0,
+      "dengue": 0.02,
+      "typhoid": 0.97
+    },
+    "urgency": 1.27,
+    "urgency_legend": {
+      "0": "Home care and review in a few days",
+      "1": "Outpatient review within 24 hours",
+      "2": "Same day assessment",
+      "3": "Immediate hospital admission"
+    },
+    "safe_without_clinician": 0.05,
+    "matched": true
+  },
+  "usage": {
+    "calls": 16,
+    "input_tokens": 23944,
+    "output_tokens": 5081,
+    "cost": 0.001005648
+  }
+}
